@@ -28,7 +28,18 @@ namespace LaserGRBL.RasterConverter
 			Rectangle destRect = new Rectangle(0, 0, size.Width, size.Height);
 			Bitmap destImage = new Bitmap(size.Width, size.Height);
 
-			destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+			float hr = image.HorizontalResolution;
+			float vr = image.VerticalResolution;
+			if ((Math.Abs(hr) < 1.0f) || (Math.Abs(vr) < 1.0f))
+			{
+				using (Graphics graphics = Graphics.FromHwnd(IntPtr.Zero))
+				{
+					hr = graphics.DpiX;
+					vr = graphics.DpiY;
+				}
+			}
+			Logger.LogMessage("SetResolution", "hr={0}, vr={1}", new[] {hr, vr});
+			destImage.SetResolution(hr, vr);
 
 			using (Graphics g = Graphics.FromImage(destImage))
 			{

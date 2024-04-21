@@ -1,8 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1705
-MinimumVisualStudioVersion = 10.0.40219.1
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaserGRBL", "LaserGRBL\LaserGRBL.csproj", "{839698EC-FE05-4112-ACCB-A5D7556714F0}"
 EndProject
 Global
@@ -21,5 +19,34 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80341FEB-B23F-472A-8A96-5133B743802B}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.scope = text/x-csharp
+		$2.EolMarker = Windows
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+		$3.NewLinesForBracesInProperties = False
+		$3.NewLinesForBracesInAccessors = False
+		$3.NewLinesForBracesInAnonymousMethods = False
+		$3.NewLinesForBracesInControlBlocks = False
+		$3.NewLinesForBracesInAnonymousTypes = False
+		$3.NewLinesForBracesInObjectCollectionArrayInitializers = False
+		$3.NewLinesForBracesInLambdaExpressionBody = False
+		$3.NewLineForElse = False
+		$3.NewLineForCatch = False
+		$3.NewLineForFinally = False
+		$3.NewLineForMembersInObjectInit = False
+		$3.NewLineForMembersInAnonymousTypes = False
+		$3.NewLineForClausesInQuery = False
+		$0.TextStylePolicy = $4
+		$4.inheritsSet = null
+		$4.scope = application/xml
+		$0.XmlFormattingPolicy = $5
+		$5.scope = application/xml
+		$0.StandardHeader = $6
 	EndGlobalSection
 EndGlobal

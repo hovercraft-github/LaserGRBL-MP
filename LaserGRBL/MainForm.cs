@@ -31,8 +31,11 @@ namespace LaserGRBL
 			InitializeComponent();
 
 			MnOrtur.Visible = false;
-			MMn.Renderer = new MMnRenderer();
-
+			//MMn.Renderer = new MMnRenderer();
+			ToolStripManager.Renderer = new MMnRenderer();
+			//ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new CustomMenuColor());
+			MMn.RenderMode = ToolStripRenderMode.ManagerRenderMode; //.System; //.Professional; //
+			MMn.Renderer = ToolStripManager.Renderer;  //new MMnRenderer();
 
 			splitContainer1.FixedPanel = FixedPanel.Panel1;
 			splitContainer1.SplitterDistance = Settings.GetObject("MainForm Splitter Position", 260);
@@ -110,7 +113,13 @@ namespace LaserGRBL
 		private void RefreshColorSchema()
 		{
 			MMn.BackColor = BackColor = StatusBar.BackColor = ColorScheme.FormBackColor;
-			MMn.ForeColor = ForeColor = ColorScheme.FormForeColor;
+			MMn.ForeColor =
+			ForeColor = ColorScheme.FormForeColor;
+			/*foreach (ToolStripMenuItem item in this.MMn.Items)
+			{
+				item.BackColor = ColorScheme.FormBackColor;
+				item.ForeColor = ColorScheme.FormForeColor;
+			}*/
 			blueLaserToolStripMenuItem.Checked = ColorScheme.CurrentScheme == ColorScheme.Scheme.BlueLaser;
 			redLaserToolStripMenuItem.Checked = ColorScheme.CurrentScheme == ColorScheme.Scheme.RedLaser;
 			darkToolStripMenuItem.Checked = ColorScheme.CurrentScheme == ColorScheme.Scheme.Dark;
@@ -121,6 +130,10 @@ namespace LaserGRBL
 			ConnectionForm.OnColorChange();
 			PreviewForm.OnColorChange();
 			RefreshOverride();
+			this.MMn.ResumeLayout(false);
+			this.MMn.PerformLayout();
+			this.ResumeLayout(false);
+			this.PerformLayout();
 		}
 
 		void GitHub_NewVersion(Version current, GitHub.OnlineVersion available, Exception error)
@@ -1078,6 +1091,7 @@ namespace LaserGRBL
 	{
 		public MMnRenderer() : base(new CustomMenuColor()) { }
 
+		/*
 		protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
 		{
 			Color c = e.Item.Selected ? ColorScheme.MenuHighlightColor : ColorScheme.FormBackColor;
@@ -1087,19 +1101,33 @@ namespace LaserGRBL
 		protected override void OnRenderImageMargin(ToolStripRenderEventArgs e)
 		{
 			e.Graphics.Clear(ColorScheme.FormBackColor);
+			using (Brush b = new SolidBrush(ColorScheme.FormBackColor))
+				e.Graphics.FillRectangle(b, e.ConnectedArea);
 		}
 
 		protected override void OnRenderItemBackground(ToolStripItemRenderEventArgs e)
 		{
 			e.Graphics.Clear(ColorScheme.FormBackColor);
 		}
-
+		protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+		{
+			if (e.Item.OwnerItem != null)
+			{
+				Color c = e.Item.Selected ? ColorScheme.MenuHighlightColor : ColorScheme.FormBackColor;
+				e.Item.BackColor = c;
+				base.OnRenderMenuItemBackground(e);
+			}
+		}
+		*/
 		protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
 		{
 			Color c = e.Item.Enabled ? ColorScheme.FormForeColor : Color.Gray;
-			TextRenderer.DrawText(e.Graphics, e.Text, e.TextFont, e.TextRectangle, c, e.TextFormat);
+			//TextRenderer.DrawText(e.Graphics, e.Text, e.TextFont, e.TextRectangle, c, e.TextFormat);
+			e.TextColor = c;
+			base.OnRenderItemText(e);
 		}
 
+		/*
 		protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
 		{
 			e.Graphics.Clear(ColorScheme.FormBackColor);
@@ -1122,13 +1150,84 @@ namespace LaserGRBL
 			using (Brush b = new SolidBrush(ColorScheme.FormBackColor))
 				e.Graphics.FillRectangle(b, e.ConnectedArea);
 		}
+		*/
 	}
 	public class CustomMenuColor : ProfessionalColorTable
 	{
+		/*
 		public override Color SeparatorDark
 		{ get { return ColorScheme.MenuSeparatorColor; } }
-
 		public override Color SeparatorLight
 		{ get { return ColorScheme.MenuSeparatorColor; } }
+		*/
+		//public override Color MenuStripGradientBegin => Color.DimGray;  //ColorScheme.FormBackColor;
+		//public override Color MenuStripGradientEnd => Color.DimGray;  //ColorScheme.FormBackColor;
+		//public override Color MenuItemSelected => Color.DimGray;  //ColorScheme.MenuHighlightColor;
+		/// <summary>
+		/// Gets the starting color of the gradient used when
+		/// a top-level System.Windows.Forms.ToolStripMenuItem is pressed.
+		/// </summary>
+		public override Color MenuItemPressedGradientBegin => Color.DimGray;  //ColorScheme.MenuHighlightColor; //Color.DimGray;
+
+		/// <summary>
+		/// Gets the end color of the gradient used when a top-level
+		/// System.Windows.Forms.ToolStripMenuItem is pressed.
+		/// </summary>
+		public override Color MenuItemPressedGradientEnd => Color.DimGray;  //ColorScheme.MenuHighlightColor; //Color.DimGray;
+
+		/// <summary>
+		/// Gets the border color to use with a
+		/// System.Windows.Forms.ToolStripMenuItem.
+		/// </summary>
+		public override Color MenuItemBorder => Color.DarkGray;
+
+		/// <summary>
+		/// Gets the starting color of the gradient used when the
+		/// System.Windows.Forms.ToolStripMenuItem is selected.
+		/// </summary>
+		public override Color MenuItemSelectedGradientBegin => Color.Silver;  //ColorScheme.MenuHighlightColor; //Color.Silver;
+
+		/// <summary>
+		/// Gets the end color of the gradient used when the
+		/// System.Windows.Forms.ToolStripMenuItem is selected.
+		/// </summary>
+		public override Color MenuItemSelectedGradientEnd => Color.DimGray; //ColorScheme.MenuHighlightColor; //Color.DimGray;
+
+		/// <summary>
+		/// Gets the solid background color of the
+		/// System.Windows.Forms.ToolStripDropDown.
+		/// </summary>
+		public override Color ToolStripDropDownBackground => ColorScheme.FormBackColor;  //Color.DimGray;
+
+		/// <summary>
+		/// Gets the starting color of the gradient used in the image
+		/// margin of a System.Windows.Forms.ToolStripDropDownMenu.
+		/// </summary>
+		public override Color ImageMarginGradientBegin => Color.DimGray;
+
+		/// <summary>
+		/// Gets the middle color of the gradient used in the image
+		/// margin of a System.Windows.Forms.ToolStripDropDownMenu.
+		/// </summary>
+		public override Color ImageMarginGradientMiddle => Color.DimGray;
+
+		/// <summary>
+		/// Gets the end color of the gradient used in the image
+		/// margin of a System.Windows.Forms.ToolStripDropDownMenu.
+		/// </summary>
+		public override Color ImageMarginGradientEnd => Color.DimGray;
+
+		/// <summary>
+		/// Gets the color to use to for shadow effects on
+		/// the System.Windows.Forms.ToolStripSeparator.
+		/// </summary>
+		public override Color SeparatorDark => ColorScheme.MenuSeparatorColor;
+		public override Color SeparatorLight => ColorScheme.MenuSeparatorColor;
+
+		/// <summary>
+		/// Gets the color that is the border color to use
+		/// on a System.Windows.Forms.MenuStrip.
+		/// </summary>
+		public override Color MenuBorder => Color.DarkGray;
 	}
 }

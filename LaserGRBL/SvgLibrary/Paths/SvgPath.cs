@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Xml.Serialization;
+//using System.Xml.Serialization;
 using System.Xml;
 using System.Diagnostics;
 using Svg.ExtensionMethods;

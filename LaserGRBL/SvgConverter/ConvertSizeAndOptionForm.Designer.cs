@@ -56,8 +56,8 @@ namespace LaserGRBL.SvgConverter
 			this.GbSpeed = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
 			this.LblBorderTracing = new System.Windows.Forms.Label();
-			this.LblBorderTracingmm = new System.Windows.Forms.Label();
 			this.IIBorderTracing = new LaserGRBL.UserControls.NumericInput.IntegerInputRanged();
+			this.LblBorderTracingmm = new System.Windows.Forms.Label();
 			this.BtnPSHelper = new LaserGRBL.UserControls.ImageButton();
 			this.GbLaser = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -71,23 +71,23 @@ namespace LaserGRBL.SvgConverter
 			this.IIMaxPower = new LaserGRBL.UserControls.NumericInput.IntegerInputRanged();
 			this.LblMinPerc = new System.Windows.Forms.Label();
 			this.LblMaxPerc = new System.Windows.Forms.Label();
-			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.BtnCancel = new System.Windows.Forms.Button();
-			this.BtnCreate = new System.Windows.Forms.Button();
 			this.gbFilter = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.labelFilter = new System.Windows.Forms.Label();
 			this.CBFilter = new System.Windows.Forms.ComboBox();
 			this.BtnColorFilter = new LaserGRBL.UserControls.ImageButton();
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.BtnCancel = new System.Windows.Forms.Button();
+			this.BtnCreate = new System.Windows.Forms.Button();
 			this.TT = new System.Windows.Forms.ToolTip(this.components);
 			this.tableLayoutPanel9.SuspendLayout();
 			this.GbSpeed.SuspendLayout();
 			this.tableLayoutPanel6.SuspendLayout();
 			this.GbLaser.SuspendLayout();
 			this.tableLayoutPanel7.SuspendLayout();
-			this.tableLayoutPanel1.SuspendLayout();
 			this.gbFilter.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
+			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel9
@@ -95,8 +95,8 @@ namespace LaserGRBL.SvgConverter
 			resources.ApplyResources(this.tableLayoutPanel9, "tableLayoutPanel9");
 			this.tableLayoutPanel9.Controls.Add(this.GbSpeed, 0, 0);
 			this.tableLayoutPanel9.Controls.Add(this.GbLaser, 0, 1);
-			this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel1, 0, 5);
-			this.tableLayoutPanel9.Controls.Add(this.gbFilter, 0, 3);
+			this.tableLayoutPanel9.Controls.Add(this.gbFilter, 0, 2);
+			this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel1, 0, 3);
 			this.tableLayoutPanel9.Name = "tableLayoutPanel9";
 			// 
 			// GbSpeed
@@ -110,20 +110,15 @@ namespace LaserGRBL.SvgConverter
 			// 
 			resources.ApplyResources(this.tableLayoutPanel6, "tableLayoutPanel6");
 			this.tableLayoutPanel6.Controls.Add(this.LblBorderTracing, 0, 0);
-			this.tableLayoutPanel6.Controls.Add(this.LblBorderTracingmm, 2, 0);
 			this.tableLayoutPanel6.Controls.Add(this.IIBorderTracing, 1, 0);
-			this.tableLayoutPanel6.Controls.Add(this.BtnPSHelper, 3, 0);
+			this.tableLayoutPanel6.Controls.Add(this.LblBorderTracingmm, 2, 0);
+			this.tableLayoutPanel6.Controls.Add(this.BtnPSHelper, 4, 0);
 			this.tableLayoutPanel6.Name = "tableLayoutPanel6";
 			// 
 			// LblBorderTracing
 			// 
 			resources.ApplyResources(this.LblBorderTracing, "LblBorderTracing");
 			this.LblBorderTracing.Name = "LblBorderTracing";
-			// 
-			// LblBorderTracingmm
-			// 
-			resources.ApplyResources(this.LblBorderTracingmm, "LblBorderTracingmm");
-			this.LblBorderTracingmm.Name = "LblBorderTracingmm";
 			// 
 			// IIBorderTracing
 			// 
@@ -137,13 +132,19 @@ namespace LaserGRBL.SvgConverter
 			this.IIBorderTracing.NormalBorderColor = System.Drawing.SystemColors.ActiveBorder;
 			this.IIBorderTracing.CurrentValueChanged += new LaserGRBL.UserControls.NumericInput.IntegerInputBase.CurrentValueChangedEventHandler(this.IIBorderTracingCurrentValueChanged);
 			// 
+			// LblBorderTracingmm
+			// 
+			resources.ApplyResources(this.LblBorderTracingmm, "LblBorderTracingmm");
+			this.tableLayoutPanel6.SetColumnSpan(this.LblBorderTracingmm, 2);
+			this.LblBorderTracingmm.Name = "LblBorderTracingmm";
+			// 
 			// BtnPSHelper
 			// 
 			this.BtnPSHelper.AltImage = null;
-			resources.ApplyResources(this.BtnPSHelper, "BtnPSHelper");
 			this.BtnPSHelper.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.BtnPSHelper.Caption = null;
 			this.BtnPSHelper.Coloration = System.Drawing.Color.Empty;
+			resources.ApplyResources(this.BtnPSHelper, "BtnPSHelper");
 			this.BtnPSHelper.Image = ((System.Drawing.Image)(resources.GetObject("BtnPSHelper.Image")));
 			this.BtnPSHelper.Name = "BtnPSHelper";
 			this.BtnPSHelper.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
@@ -259,6 +260,49 @@ namespace LaserGRBL.SvgConverter
 			resources.ApplyResources(this.LblMaxPerc, "LblMaxPerc");
 			this.LblMaxPerc.Name = "LblMaxPerc";
 			// 
+			// gbFilter
+			// 
+			resources.ApplyResources(this.gbFilter, "gbFilter");
+			this.gbFilter.Controls.Add(this.tableLayoutPanel2);
+			this.gbFilter.Name = "gbFilter";
+			this.gbFilter.TabStop = false;
+			// 
+			// tableLayoutPanel2
+			// 
+			resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+			this.tableLayoutPanel2.Controls.Add(this.labelFilter, 0, 0);
+			this.tableLayoutPanel2.Controls.Add(this.CBFilter, 1, 0);
+			this.tableLayoutPanel2.Controls.Add(this.BtnColorFilter, 3, 0);
+			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+			// 
+			// labelFilter
+			// 
+			resources.ApplyResources(this.labelFilter, "labelFilter");
+			this.labelFilter.Name = "labelFilter";
+			// 
+			// CBFilter
+			// 
+			resources.ApplyResources(this.CBFilter, "CBFilter");
+			this.tableLayoutPanel2.SetColumnSpan(this.CBFilter, 2);
+			this.CBFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.CBFilter.DropDownWidth = 190;
+			this.CBFilter.FormattingEnabled = true;
+			this.CBFilter.Name = "CBFilter";
+			// 
+			// BtnColorFilter
+			// 
+			this.BtnColorFilter.AltImage = null;
+			resources.ApplyResources(this.BtnColorFilter, "BtnColorFilter");
+			this.BtnColorFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.BtnColorFilter.Caption = null;
+			this.BtnColorFilter.Coloration = System.Drawing.Color.Empty;
+			this.BtnColorFilter.Image = ((System.Drawing.Image)(resources.GetObject("BtnColorFilter.Image")));
+			this.BtnColorFilter.Name = "BtnColorFilter";
+			this.BtnColorFilter.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
+			this.TT.SetToolTip(this.BtnColorFilter, resources.GetString("BtnColorFilter.ToolTip"));
+			this.BtnColorFilter.UseAltImage = false;
+			this.BtnColorFilter.Click += new System.EventHandler(this.BtnColorFilter_Click);
+			// 
 			// tableLayoutPanel1
 			// 
 			resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
@@ -279,48 +323,6 @@ namespace LaserGRBL.SvgConverter
 			this.BtnCreate.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.BtnCreate.Name = "BtnCreate";
 			this.BtnCreate.UseVisualStyleBackColor = true;
-			// 
-			// gbFilter
-			// 
-			resources.ApplyResources(this.gbFilter, "gbFilter");
-			this.gbFilter.Controls.Add(this.tableLayoutPanel2);
-			this.gbFilter.Name = "gbFilter";
-			this.gbFilter.TabStop = false;
-			// 
-			// tableLayoutPanel2
-			// 
-			resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-			this.tableLayoutPanel2.Controls.Add(this.labelFilter, 0, 0);
-			this.tableLayoutPanel2.Controls.Add(this.CBFilter, 1, 0);
-			this.tableLayoutPanel2.Controls.Add(this.BtnColorFilter, 2, 0);
-			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-			// 
-			// labelFilter
-			// 
-			resources.ApplyResources(this.labelFilter, "labelFilter");
-			this.labelFilter.Name = "labelFilter";
-			// 
-			// CBFilter
-			// 
-			resources.ApplyResources(this.CBFilter, "CBFilter");
-			this.CBFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.CBFilter.DropDownWidth = 195;
-			this.CBFilter.FormattingEnabled = true;
-			this.CBFilter.Name = "CBFilter";
-			// 
-			// BtnColorFilter
-			// 
-			this.BtnColorFilter.AltImage = null;
-			resources.ApplyResources(this.BtnColorFilter, "BtnColorFilter");
-			this.BtnColorFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.BtnColorFilter.Caption = null;
-			this.BtnColorFilter.Coloration = System.Drawing.Color.Empty;
-			this.BtnColorFilter.Image = ((System.Drawing.Image)(resources.GetObject("BtnColorFilter.Image")));
-			this.BtnColorFilter.Name = "BtnColorFilter";
-			this.BtnColorFilter.SizingMode = LaserGRBL.UserControls.ImageButton.SizingModes.FixedSize;
-			this.TT.SetToolTip(this.BtnColorFilter, resources.GetString("BtnColorFilter.ToolTip"));
-			this.BtnColorFilter.UseAltImage = false;
-			this.BtnColorFilter.Click += new System.EventHandler(this.BtnColorFilter_Click);
 			// 
 			// TT
 			// 
@@ -346,14 +348,13 @@ namespace LaserGRBL.SvgConverter
 			this.GbLaser.PerformLayout();
 			this.tableLayoutPanel7.ResumeLayout(false);
 			this.tableLayoutPanel7.PerformLayout();
-			this.tableLayoutPanel1.ResumeLayout(false);
 			this.gbFilter.ResumeLayout(false);
 			this.gbFilter.PerformLayout();
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.tableLayoutPanel2.PerformLayout();
+			this.tableLayoutPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
 
 		private System.Windows.Forms.ComboBox CBFilter;

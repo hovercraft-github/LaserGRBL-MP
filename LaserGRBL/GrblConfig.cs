@@ -30,6 +30,7 @@ namespace LaserGRBL
             DGV.BackgroundColor = ColorScheme.FormBackColor; //SystemColors.Control;
             DGV.ForeColor = ColorScheme.FormForeColor; //SystemColors.ControlText;
             DGV.DefaultCellStyle.BackColor = ColorScheme.FormBackColor;
+            DGV.DefaultCellStyle.ForeColor = ColorScheme.ChangeColorBrightness(ColorScheme.FormBackColor, +0.7f);
             DGV.ColumnHeadersDefaultCellStyle.BackColor = ColorScheme.FormBackColor;
             DGV.ColumnHeadersDefaultCellStyle.ForeColor = ColorScheme.FormForeColor;
             DGV.RowHeadersDefaultCellStyle.BackColor = ColorScheme.FormBackColor;

@@ -106,6 +106,7 @@ namespace LaserGRBL.UserControls
 
 		private void waterMarkContainer_Paint(object sender, PaintEventArgs e)
 		{
+			if (waterMarkContainer == null) return;
 			//Setting the watermark container up
 			waterMarkContainer.Location = new Point(2, 0); // sets the location
 			waterMarkContainer.Height = this.Height; // Height should be the same as its parent

@@ -213,9 +213,9 @@ namespace LaserGRBL
 			get 
 			{
 				if (DarkScheme)
-					return ChangeColorBrightness(FormBackColor, +0.15f);
+					return ChangeColorBrightness(FormBackColor, +0.2f);
 				else
-					return ChangeColorBrightness(FormBackColor, -0.1f); 
+					return ChangeColorBrightness(FormBackColor, -0.2f); 
 			} 
 		}
 
@@ -289,7 +289,10 @@ namespace LaserGRBL
 				red = (255 - red) * correctionFactor + red;
 				green = (255 - green) * correctionFactor + green;
 				blue = (255 - blue) * correctionFactor + blue;
-			}
+                if (red > 255.0f) red = 255.0f;
+                if (green > 255.0f) green = 255.0f;
+                if (blue > 255.0f) blue = 255.0f;
+            }
 
 			return Color.FromArgb(color.A, (int)red, (int)green, (int)blue);
 		}

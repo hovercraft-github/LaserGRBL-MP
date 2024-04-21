@@ -45,14 +45,18 @@ namespace Tools
 			 // ES_USER_PRESENT = 0x00000004
 		}
 
+		private static readonly bool runningOnMono = Type.GetType("Mono.Runtime") != null;
+
 		public static void SignalActvity()
 		{
+			if (runningOnMono) return;
 			SetThreadExecutionState(EXECUTION_STATE.ES_SYSTEM_REQUIRED);
 		}
 
 		// Clear EXECUTION_STATE flags to disable away mode and allow the system to idle to sleep normally.
 		public static void SignalFree()
 		{
+			if (runningOnMono) return;
 			SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS);
 		}
 
