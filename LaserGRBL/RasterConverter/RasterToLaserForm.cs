@@ -235,7 +235,7 @@ namespace LaserGRBL.RasterConverter
 
 						ImageProcessor P = IP;
 						IP = null;
-						P?.Dispose();
+						if (P != null) P.Dispose();
 					}
 				}
 				finally { Close(); }
@@ -728,7 +728,7 @@ namespace LaserGRBL.RasterConverter
 			{
 				ImageProcessor P = IP;
 				IP = null;
-				P?.Dispose();
+				if (P != null) P.Dispose();
 			}
 			finally{ Close(); }
 		}
