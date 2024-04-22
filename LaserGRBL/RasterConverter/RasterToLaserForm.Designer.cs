@@ -385,11 +385,11 @@
 			// TlpLeft
 			// 
 			resources.ApplyResources(this.TlpLeft, "TlpLeft");
-			this.TlpLeft.Controls.Add(this.GbPassthrough, 0, 2);
+			this.TlpLeft.Controls.Add(this.GbPassthrough, 0, 6);
 			this.TlpLeft.Controls.Add(this.GbParameters, 0, 0);
 			this.TlpLeft.Controls.Add(this.GbCenterlineOptions, 0, 3);
-			this.TlpLeft.Controls.Add(this.GbVectorizeOptions, 0, 5);
-			this.TlpLeft.Controls.Add(this.GbLineToLineOptions, 0, 4);
+			this.TlpLeft.Controls.Add(this.GbVectorizeOptions, 0, 4);
+			this.TlpLeft.Controls.Add(this.GbLineToLineOptions, 0, 2);
 			this.TlpLeft.Controls.Add(this.GbConversionTool, 0, 1);
 			this.TlpLeft.Name = "TlpLeft";
 			this.TlpMain.SetRowSpan(this.TlpLeft, 2);
@@ -403,6 +403,7 @@
 			// 
 			// TbPassthroughInfo
 			// 
+			this.TbPassthroughInfo.BackColor = System.Drawing.SystemColors.HighlightText;
 			resources.ApplyResources(this.TbPassthroughInfo, "TbPassthroughInfo");
 			this.TbPassthroughInfo.Name = "TbPassthroughInfo";
 			this.TbPassthroughInfo.ReadOnly = true;
@@ -790,17 +791,17 @@
 			// 
 			resources.ApplyResources(this.UDSpotRemoval, "UDSpotRemoval");
 			this.UDSpotRemoval.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
+									2,
+									0,
+									0,
+									0});
 			this.UDSpotRemoval.Name = "UDSpotRemoval";
 			this.TT.SetToolTip(this.UDSpotRemoval, resources.GetString("UDSpotRemoval.ToolTip"));
 			this.UDSpotRemoval.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
+									2,
+									0,
+									0,
+									0});
 			this.UDSpotRemoval.ValueChanged += new System.EventHandler(this.UDSpotRemoval_ValueChanged);
 			// 
 			// CbSpotRemoval
@@ -825,27 +826,27 @@
 			resources.ApplyResources(this.UDOptimize, "UDOptimize");
 			this.UDOptimize.DecimalPlaces = 1;
 			this.UDOptimize.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
+									1,
+									0,
+									0,
+									65536});
 			this.UDOptimize.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
+									50,
+									0,
+									0,
+									0});
 			this.UDOptimize.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            65536});
+									2,
+									0,
+									0,
+									65536});
 			this.UDOptimize.Name = "UDOptimize";
 			this.TT.SetToolTip(this.UDOptimize, resources.GetString("UDOptimize.ToolTip"));
 			this.UDOptimize.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            65536});
+									2,
+									0,
+									0,
+									65536});
 			this.UDOptimize.ValueChanged += new System.EventHandler(this.UDOptimize_ValueChanged);
 			// 
 			// UDSmoothing
@@ -853,17 +854,17 @@
 			resources.ApplyResources(this.UDSmoothing, "UDSmoothing");
 			this.UDSmoothing.DecimalPlaces = 1;
 			this.UDSmoothing.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
+									1,
+									0,
+									0,
+									65536});
 			this.UDSmoothing.Name = "UDSmoothing";
 			this.TT.SetToolTip(this.UDSmoothing, resources.GetString("UDSmoothing.ToolTip"));
 			this.UDSmoothing.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            65536});
+									10,
+									0,
+									0,
+									65536});
 			this.UDSmoothing.ValueChanged += new System.EventHandler(this.UDSmoothing_ValueChanged);
 			// 
 			// CbOptimize
@@ -906,22 +907,22 @@
 			resources.ApplyResources(this.UDFillingQuality, "UDFillingQuality");
 			this.UDFillingQuality.DecimalPlaces = 3;
 			this.UDFillingQuality.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
+									50,
+									0,
+									0,
+									0});
 			this.UDFillingQuality.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
+									1,
+									0,
+									0,
+									65536});
 			this.UDFillingQuality.Name = "UDFillingQuality";
 			this.TT.SetToolTip(this.UDFillingQuality, resources.GetString("UDFillingQuality.ToolTip"));
 			this.UDFillingQuality.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
+									3,
+									0,
+									0,
+									0});
 			this.UDFillingQuality.ValueChanged += new System.EventHandler(this.UDFillingQuality_ValueChanged);
 			// 
 			// LblFillingLineLbl
@@ -934,27 +935,27 @@
 			resources.ApplyResources(this.UDDownSample, "UDDownSample");
 			this.UDDownSample.DecimalPlaces = 1;
 			this.UDDownSample.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
+									1,
+									0,
+									0,
+									65536});
 			this.UDDownSample.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+									10,
+									0,
+									0,
+									0});
 			this.UDDownSample.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+									1,
+									0,
+									0,
+									0});
 			this.UDDownSample.Name = "UDDownSample";
 			this.TT.SetToolTip(this.UDDownSample, resources.GetString("UDDownSample.ToolTip"));
 			this.UDDownSample.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+									1,
+									0,
+									0,
+									0});
 			this.UDDownSample.ValueChanged += new System.EventHandler(this.UDDownSample_ValueChanged);
 			// 
 			// label1
@@ -1032,22 +1033,22 @@
 			this.UDQuality.DecimalPlaces = 3;
 			resources.ApplyResources(this.UDQuality, "UDQuality");
 			this.UDQuality.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
+									50,
+									0,
+									0,
+									0});
 			this.UDQuality.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+									1,
+									0,
+									0,
+									0});
 			this.UDQuality.Name = "UDQuality";
 			this.TT.SetToolTip(this.UDQuality, resources.GetString("UDQuality.ToolTip"));
 			this.UDQuality.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
+									3,
+									0,
+									0,
+									0});
 			this.UDQuality.ValueChanged += new System.EventHandler(this.UDQuality_ValueChanged);
 			// 
 			// CbLinePreview
@@ -1243,7 +1244,6 @@
 			this.tableLayoutPanel4.PerformLayout();
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);
-
 		}
 
 		#endregion
