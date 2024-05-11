@@ -580,7 +580,6 @@ namespace LaserGRBL.RasterConverter
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
 
 		private UserControls.ImageButton BtnModulationInfo;

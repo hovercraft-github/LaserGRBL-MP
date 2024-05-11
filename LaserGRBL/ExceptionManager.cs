@@ -35,12 +35,12 @@ namespace LaserGRBL
 
 		private static void OnUnhandledMainException(object sender, ThreadExceptionEventArgs e)
 		{
-			CreateAndShow(e?.Exception, true, false);
+			CreateAndShow(e != null ? e.Exception : null, true, false);
 		}
 
 		private static void OnUnhandledThreadException(object sender, UnhandledExceptionEventArgs e)
 		{
-			CreateAndShow(e?.ExceptionObject as Exception, false, false);
+			CreateAndShow(e != null ? e.ExceptionObject as Exception : null, false, false);
 		}
 
 		public static void CreateAndShow(Exception ex, bool cancontinue, bool manual = true)
@@ -54,11 +54,12 @@ namespace LaserGRBL
 				{
 					sb.AppendFormat("LaserGrbl v{0}", Program.CurrentVersion);
 					sb.AppendLine();
-					sb.AppendFormat("{0} v{1}", Core?.Type, GrblCore.Configuration?.GrblVersion);
+					sb.AppendFormat("{0} v{1}", Core != null ? Core.Type : Firmware.Grbl,
+						GrblCore.Configuration != null ? GrblCore.Configuration.GrblVersion : null);
 					sb.AppendLine();
 					sb.AppendFormat("Wrapper: {0}", Settings.GetObject("ComWrapper Protocol", ComWrapper.WrapperType.UsbSerial));
 					sb.AppendLine();
-					sb.AppendFormat("{0} ({1})", Tools.OSHelper.GetOSInfo()?.Replace("|", ", "), Tools.OSHelper.GetBitFlag());
+					sb.AppendFormat("{0} ({1})", (Tools.OSHelper.GetOSInfo() != null ? Tools.OSHelper.GetOSInfo() : "").Replace("|", ", "), Tools.OSHelper.GetBitFlag());
 					sb.AppendLine();
 					sb.AppendFormat("CLR: {0}", Tools.OSHelper.GetClrInfo()); 
 					sb.AppendLine();

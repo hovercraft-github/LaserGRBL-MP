@@ -117,16 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tableLayoutPanel9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tableLayoutPanel9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tableLayoutPanel9.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
   <data name="tableLayoutPanel9.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="GbSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
   </data>
   <data name="GbSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -147,21 +153,21 @@
   <data name="BtnUnlockProportion.AltImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="BtnUnlockProportion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -170,30 +176,30 @@
   <data name="BtnUnlockProportion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="BtnUnlockProportion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 31</value>
+    <value>256, 39</value>
   </data>
   <data name="BtnUnlockProportion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 2, 0</value>
+    <value>0, 0, 3, 0</value>
   </data>
   <data name="BtnUnlockProportion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 17</value>
+    <value>23, 21</value>
   </data>
   <data name="BtnUnlockProportion.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -208,7 +214,7 @@
     <value>BtnUnlockProportion</value>
   </data>
   <data name="&gt;&gt;BtnUnlockProportion.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnUnlockProportion.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
@@ -226,10 +232,13 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 54</value>
+    <value>4, 66</value>
+  </data>
+  <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
+    <value>46, 17</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -259,10 +268,13 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 33</value>
+    <value>4, 41</value>
+  </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 13</value>
+    <value>35, 17</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -286,10 +298,13 @@
     <value>Left</value>
   </data>
   <data name="IIOffsetX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 53</value>
+    <value>78, 66</value>
+  </data>
+  <data name="IIOffsetX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="IIOffsetX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 15</value>
+    <value>73, 17</value>
   </data>
   <data name="IIOffsetX.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -298,7 +313,7 @@
     <value>IIOffsetX</value>
   </data>
   <data name="&gt;&gt;IIOffsetX.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.NumericInput.DecimalInputRanged, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.NumericInput.DecimalInputRanged, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;IIOffsetX.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
@@ -307,10 +322,13 @@
     <value>3</value>
   </data>
   <data name="IIOffsetY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 53</value>
+    <value>179, 66</value>
+  </data>
+  <data name="IIOffsetY.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="IIOffsetY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 15</value>
+    <value>73, 17</value>
   </data>
   <data name="IIOffsetY.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -319,7 +337,7 @@
     <value>IIOffsetY</value>
   </data>
   <data name="&gt;&gt;IIOffsetY.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.NumericInput.DecimalInputRanged, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.NumericInput.DecimalInputRanged, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;IIOffsetY.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
@@ -328,10 +346,13 @@
     <value>4</value>
   </data>
   <data name="IISizeH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 32</value>
+    <value>179, 41</value>
+  </data>
+  <data name="IISizeH.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="IISizeH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 15</value>
+    <value>73, 17</value>
   </data>
   <data name="IISizeH.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -340,7 +361,7 @@
     <value>IISizeH</value>
   </data>
   <data name="&gt;&gt;IISizeH.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.NumericInput.DecimalInputRanged, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.NumericInput.DecimalInputRanged, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;IISizeH.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
@@ -349,10 +370,13 @@
     <value>5</value>
   </data>
   <data name="IISizeW.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 32</value>
+    <value>78, 41</value>
+  </data>
+  <data name="IISizeW.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="IISizeW.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 15</value>
+    <value>73, 17</value>
   </data>
   <data name="IISizeW.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -361,7 +385,7 @@
     <value>IISizeW</value>
   </data>
   <data name="&gt;&gt;IISizeW.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.NumericInput.DecimalInputRanged, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.NumericInput.DecimalInputRanged, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;IISizeW.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
@@ -379,13 +403,13 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 33</value>
+    <value>58, 41</value>
   </data>
   <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
+    <value>4, 0, 0, 0</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 13</value>
+    <value>16, 17</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -418,13 +442,13 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 54</value>
+    <value>58, 66</value>
   </data>
   <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
+    <value>4, 0, 0, 0</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 13</value>
+    <value>16, 17</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -457,13 +481,13 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 33</value>
+    <value>159, 41</value>
   </data>
   <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
+    <value>4, 0, 0, 0</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 13</value>
+    <value>16, 17</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -496,13 +520,13 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 54</value>
+    <value>159, 66</value>
   </data>
   <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
+    <value>4, 0, 0, 0</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 13</value>
+    <value>16, 17</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -544,13 +568,13 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 5</value>
+    <value>177, 6</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
+    <value>4, 0, 0, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 13</value>
+    <value>30, 17</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -583,10 +607,13 @@
     <value>NoControl</value>
   </data>
   <data name="CbAutosize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>4, 4</value>
+  </data>
+  <data name="CbAutosize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="CbAutosize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 17</value>
+    <value>84, 21</value>
   </data>
   <data name="CbAutosize.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -613,10 +640,13 @@
     <value>False</value>
   </data>
   <data name="IIDpi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 4</value>
+    <value>96, 6</value>
+  </data>
+  <data name="IIDpi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="IIDpi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 15</value>
+    <value>73, 17</value>
   </data>
   <data name="IIDpi.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -625,7 +655,7 @@
     <value>IIDpi</value>
   </data>
   <data name="&gt;&gt;IIDpi.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.NumericInput.IntegerInputRanged, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.NumericInput.IntegerInputRanged, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;IIDpi.Parent" xml:space="preserve">
     <value>tableLayoutPanel2</value>
@@ -642,34 +672,38 @@
   <data name="BtnDPI.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
+        TkSuQmCC
 </value>
   </data>
   <data name="BtnDPI.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 3</value>
+    <value>211, 4</value>
+  </data>
+  <data name="BtnDPI.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="BtnDPI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 17</value>
+    <value>44, 21</value>
   </data>
   <data name="BtnDPI.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -681,7 +715,7 @@
     <value>BtnDPI</value>
   </data>
   <data name="&gt;&gt;BtnDPI.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnDPI.Parent" xml:space="preserve">
     <value>tableLayoutPanel2</value>
@@ -690,13 +724,16 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>4, 4</value>
+  </data>
+  <data name="tableLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 23</value>
+    <value>259, 29</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -731,42 +768,42 @@
   <data name="BtnReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAAJxAIA3kywAAACBjSFJNAABu
-        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
-        RK5CYII=
+        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
+        YII=
 </value>
   </data>
   <data name="BtnReset.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="BtnReset.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 2, 0</value>
+    <value>0, 0, 3, 0</value>
   </data>
   <data name="BtnReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 17</value>
+    <value>23, 21</value>
   </data>
   <data name="BtnReset.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -775,7 +812,7 @@
     <value>BtnReset</value>
   </data>
   <data name="&gt;&gt;BtnReset.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnReset.Parent" xml:space="preserve">
     <value>tableLayoutPanel4</value>
@@ -789,22 +826,22 @@
   <data name="BtnCenter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEbSURBVDhPY8AH
-        TExMGkAYyiUd+Pr6/gdhKBc/+M/O7vafja38PyurPhgD2cWqqtNBGF0cREO1IQBQIhyIO5AUduQ5OPwH
-        YXRxIG0IdBYzVCtYcwQIQ7lwgCsMgK4tBWEoF2xANQhDuWAA8z+2cAC6IB2EoVygAAMDFwhDuXCA0wVA
-        58O9AFLQZWLyf46MzBqQTSA+jAbiA1AMFwPRW8TFd83X1QXzwQYs1tb+v11MbC+xBqyQkNg81cAAYgAI
-        UOQFEMAWCyCbkDFUGAyIigUQwOkCrLHAxqYFxOX/WVhs/3NwKIDYFTY2/5NdXEAJCVm8Akg7Q7UiAFSy
-        DajQHsZuVVKan6itPQFdHMi2gmrDD7D5nySAKwwQgIEBAEZSuSFmbVmYAAAAAElFTkSuQmCC
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEUSURBVDhPY2DA
+        A0xMTBpAGJ8avHK+vr7/QZgoA/6zs7v9Z2Mr/8/Kqg/GQHaxqup0EEYXB8ljGApUFA7EHUgGdOQ5OPwH
+        YXRxoBpDoLOY4YYAFUSAMLqpuMIA6NpSEEY2oBpoQDWyATD/YwsHoAvSQRhhAAMDF9BJXES7AOh8uBdA
+        zuwyMfk/R0ZmDcg2EB9GA9kHoBguBpLbIi6+a76uLlgtA4hYrK39f7uY2F5iDVghIbF5qoEBxAAQADmf
+        bC+ADcASC3gDkZhYABmMMxqxxgIbmxY4xbGw2P7n4FAAsStsbP4nu7iAEhKyeAVQ3hkzJUI0tQENsIca
+        0NaqpDQ/UVt7Aro4UI0VUfmDpMyEzURisjMARlK5IQb1uZIAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="BtnCenter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 0</value>
+    <value>26, 0</value>
   </data>
   <data name="BtnCenter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 2, 0</value>
+    <value>0, 0, 3, 0</value>
   </data>
   <data name="BtnCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 17</value>
+    <value>23, 21</value>
   </data>
   <data name="BtnCenter.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -816,7 +853,7 @@
     <value>BtnCenter</value>
   </data>
   <data name="&gt;&gt;BtnCenter.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnCenter.Parent" xml:space="preserve">
     <value>tableLayoutPanel4</value>
@@ -825,7 +862,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 52</value>
+    <value>256, 64</value>
   </data>
   <data name="tableLayoutPanel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -834,7 +871,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 17</value>
+    <value>52, 21</value>
   </data>
   <data name="tableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -854,17 +891,17 @@
   <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="BtnReset" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BtnCenter" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="tableLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
+    <value>4, 22</value>
+  </data>
+  <data name="tableLayoutPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 71</value>
+    <value>380, 87</value>
   </data>
   <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -882,16 +919,19 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="BtnUnlockProportion" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="IIOffsetX" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="IIOffsetY" Row="3" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="IISizeH" Row="2" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="IISizeW" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel2" Row="0" RowSpan="1" Column="0" ColumnSpan="6" /&gt;&lt;Control Name="tableLayoutPanel4" Row="3" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Absolute,15,AutoSize,0,Absolute,15,AutoSize,0,Absolute,84" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,16" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="GbSize.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="BtnUnlockProportion" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="IIOffsetX" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="IIOffsetY" Row="3" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="IISizeH" Row="2" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="IISizeW" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel2" Row="0" RowSpan="1" Column="0" ColumnSpan="6" /&gt;&lt;Control Name="tableLayoutPanel4" Row="3" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Absolute,20,AutoSize,0,Absolute,20,AutoSize,0,Absolute,124" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="GbSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 163</value>
+    <value>4, 226</value>
+  </data>
+  <data name="GbSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GbSize.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 0</value>
   </data>
   <data name="GbSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 90</value>
+    <value>392, 128</value>
   </data>
   <data name="GbSize.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -911,11 +951,17 @@
   <data name="&gt;&gt;GbSize.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="GbSpeed.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="GbSpeed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="GbSpeed.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
+  </data>
+  <data name="tableLayoutPanel6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="tableLayoutPanel6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -936,10 +982,13 @@
     <value>NoControl</value>
   </data>
   <data name="LblBorderTracing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 4</value>
+    <value>4, 4</value>
+  </data>
+  <data name="LblBorderTracing.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="LblBorderTracing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
+    <value>96, 17</value>
   </data>
   <data name="LblBorderTracing.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -969,10 +1018,13 @@
     <value>NoControl</value>
   </data>
   <data name="LblBorderTracingmm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 4</value>
+    <value>185, 4</value>
+  </data>
+  <data name="LblBorderTracingmm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="LblBorderTracingmm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 13</value>
+    <value>56, 17</value>
   </data>
   <data name="LblBorderTracingmm.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -996,13 +1048,13 @@
     <value>Left</value>
   </data>
   <data name="IIBorderTracing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 3</value>
+    <value>104, 4</value>
   </data>
   <data name="IIBorderTracing.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 3, 3</value>
+    <value>0, 4, 4, 4</value>
   </data>
   <data name="IIBorderTracing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 15</value>
+    <value>73, 17</value>
   </data>
   <data name="IIBorderTracing.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1011,7 +1063,7 @@
     <value>IIBorderTracing</value>
   </data>
   <data name="&gt;&gt;IIBorderTracing.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.NumericInput.IntegerInputRanged, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.NumericInput.IntegerInputRanged, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;IIBorderTracing.Parent" xml:space="preserve">
     <value>tableLayoutPanel6</value>
@@ -1023,13 +1075,13 @@
     <value>Left</value>
   </data>
   <data name="IILinearFilling.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 24</value>
+    <value>104, 29</value>
   </data>
   <data name="IILinearFilling.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 3, 3</value>
+    <value>0, 4, 4, 4</value>
   </data>
   <data name="IILinearFilling.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 15</value>
+    <value>73, 17</value>
   </data>
   <data name="IILinearFilling.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1038,7 +1090,7 @@
     <value>IILinearFilling</value>
   </data>
   <data name="&gt;&gt;IILinearFilling.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.NumericInput.IntegerInputRanged, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.NumericInput.IntegerInputRanged, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;IILinearFilling.Parent" xml:space="preserve">
     <value>tableLayoutPanel6</value>
@@ -1056,10 +1108,13 @@
     <value>NoControl</value>
   </data>
   <data name="LblLinearFillingmm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 25</value>
+    <value>185, 29</value>
+  </data>
+  <data name="LblLinearFillingmm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="LblLinearFillingmm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 13</value>
+    <value>56, 17</value>
   </data>
   <data name="LblLinearFillingmm.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -1089,10 +1144,13 @@
     <value>NoControl</value>
   </data>
   <data name="LblLinearFilling.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 25</value>
+    <value>4, 29</value>
+  </data>
+  <data name="LblLinearFilling.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="LblLinearFilling.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
+    <value>89, 17</value>
   </data>
   <data name="LblLinearFilling.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1118,26 +1176,29 @@
   <data name="BtnPSHelper.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="BtnPSHelper.Location" type="System.Drawing.Point, System.Drawing">
-    <value>257, 12</value>
+    <value>249, 14</value>
+  </data>
+  <data name="BtnPSHelper.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="BtnPSHelper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 17</value>
+    <value>23, 21</value>
   </data>
   <data name="BtnPSHelper.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -1149,7 +1210,7 @@
     <value>BtnPSHelper</value>
   </data>
   <data name="&gt;&gt;BtnPSHelper.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnPSHelper.Parent" xml:space="preserve">
     <value>tableLayoutPanel6</value>
@@ -1157,17 +1218,17 @@
   <data name="&gt;&gt;BtnPSHelper.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="tableLayoutPanel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="tableLayoutPanel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
+    <value>4, 22</value>
+  </data>
+  <data name="tableLayoutPanel6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tableLayoutPanel6.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tableLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 42</value>
+    <value>276, 50</value>
   </data>
   <data name="tableLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1185,16 +1246,19 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel6.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LblBorderTracing" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LblBorderTracingmm" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="IIBorderTracing" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="IILinearFilling" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LblLinearFillingmm" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="LblLinearFilling" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BtnPSHelper" Row="0" RowSpan="2" Column="4" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,Percent,50,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="GbSpeed.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LblBorderTracing" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LblBorderTracingmm" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="IIBorderTracing" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="IILinearFilling" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LblLinearFillingmm" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="LblLinearFilling" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BtnPSHelper" Row="0" RowSpan="2" Column="4" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,Percent,50,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="GbSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>4, 4</value>
+  </data>
+  <data name="GbSpeed.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 0</value>
+  </data>
+  <data name="GbSpeed.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 0</value>
   </data>
   <data name="GbSpeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 61</value>
+    <value>392, 87</value>
   </data>
   <data name="GbSpeed.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1213,6 +1277,9 @@
   </data>
   <data name="&gt;&gt;GbSpeed.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="GbLaser.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
   </data>
   <data name="GbLaser.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1235,23 +1302,26 @@
   <data name="BtnModulationInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIMSURBVDhPpc9PSNNhHMfxZ7/pQYIOHioMojBnyMLN
-        FUSOiNEfWyASls0Fk2jVdEwTCzwU5aXoUHaxoEOHDh2m/bECFZZ/1qFyQ1JYI+kPg3JQW3qwjS6fns8z
-        /fHLgxE98IIvz/O8nx8/AeC/CHP1kDS8xmwbaZX6pchf8E6ramS79MBQm8M7PRO6tZC7cOcn/rSI87cL
-        uvoW0XZjPmf3vJ1hU3hg+3MaCN6cz/muzMGooTOprNz3X/uWY8NWmK2DNBrq/YGm7k86d3Ba/mJhcTae
-        +a+mwYatMFc9otGz19Oo70jo9p2OLeVQs/HsxKXPYMNWaJVhGmvpSeFgYErnOvUGlrqHKN/fj0r3Y2w9
-        MKBwdvomwIat0Coe0Lj34gf1pb0nX8PeGIHl0CBisRji8Tgq6p7A4n6mqzkaARu2Qiu/T+NN3e9R63sF
-        65ExVDW8wLb6YRUnEgk1c2+Z/VgUbNgKbfM9mjjcnoTNM4nq4wXWxqiKU6mUmpf3qcYbAxu2Qtt0l6Ku
-        4EfsbEnqbJ64ijOZjJqNZ8SGrdA29tFLVyiN3We+6Hb43qk4m82q2XhGbNgKbX0vPXUG5vJ72hdgZG+e
-        Ulbu7/J/zbNhK0xFW4Rp7eWOMkd41hn4nnd1/cJqauWdDTXhWTZsuUqFqdQhipp7RPG5EVHcObk6eYd3
-        2bCVq0RaJ5X9I9mIkt+LaQarb80ZCAAAAABJRU5ErkJggg==
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAISSURBVDhPpdBPSNNhHMfxZ7/pQYIOHioMojBnyML9
+        KYgcEaM/tkAkLJsLJtGquTFNLPBQlJeiQ9nFgg4dOnSY9scKVFj+WYfK/ZAU1kj6w6Ac1JYebKPLp+fz
+        W/746cGIHnixL8/zvJ8fTAAQ/0OYa4ek4TVm20ib1C/F/oJ32rRGtn8eGAo5fdMzkVsL+Qt3fmK5RZy/
+        XdTVt4jQjfm83ft2Rsah4gPbn9NA+OZ83n9lDkaNnSnQyv3AtW95NmyF2TpIo5HeH2ju/qTzhKflX1Nc
+        nI1ngasZsGErzDWPaPTs9QwaOpK6facT+gOcjWcnLn0GG7ZCqY7SWGtPGgeDUzr3qTew1D9E5f5+VHse
+        Y+uBAQ1nl38CbNgKpeoBjfsufgC/tPfka9ibYrAcGkQikYCqqqiqfwKL55nOcTQGNmyFUnmfxpu736PO
+        /wrWI2OoaXyBbQ3DWpxMJrWZe0vsx+Jgw1Yom+/RxOH2FGzeSdQeL7I2xbU4nU5r89I+fx2+BNiwFcqm
+        uxR3hz9iZ2tKZ/OqWpzNZuXD6rIz3mPDVigb++ilO5LB7jNfdDv877Q4l8uBs/GMMxu2QlnfS09dwbnC
+        nvYFGNlbpkAr93cFvhbYsBWmki3CtPZyR4UzOusKfi+4u35hNXXyzgZHdJYNW65yYSp3ipKWHlF6bkSU
+        dk6uTt7hXTZs5SqT1kkV/4hN2W+LaQarp0EL0gAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="BtnModulationInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>257, 39</value>
+    <value>340, 46</value>
+  </data>
+  <data name="BtnModulationInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="BtnModulationInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 17</value>
+    <value>23, 21</value>
   </data>
   <data name="BtnModulationInfo.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -1266,7 +1336,7 @@ Click for more information...</value>
     <value>BtnModulationInfo</value>
   </data>
   <data name="&gt;&gt;BtnModulationInfo.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnModulationInfo.Parent" xml:space="preserve">
     <value>tableLayoutPanel7</value>
@@ -1284,10 +1354,13 @@ Click for more information...</value>
     <value>NoControl</value>
   </data>
   <data name="LblSmin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 31</value>
+    <value>4, 36</value>
+  </data>
+  <data name="LblSmin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="LblSmin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
+    <value>46, 17</value>
   </data>
   <data name="LblSmin.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1311,10 +1384,13 @@ Click for more information...</value>
     <value>Left</value>
   </data>
   <data name="IIMinPower.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 30</value>
+    <value>95, 36</value>
+  </data>
+  <data name="IIMinPower.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="IIMinPower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 15</value>
+    <value>57, 17</value>
   </data>
   <data name="IIMinPower.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1323,7 +1399,7 @@ Click for more information...</value>
     <value>IIMinPower</value>
   </data>
   <data name="&gt;&gt;IIMinPower.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.NumericInput.IntegerInputRanged, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.NumericInput.IntegerInputRanged, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;IIMinPower.Parent" xml:space="preserve">
     <value>tableLayoutPanel7</value>
@@ -1341,10 +1417,13 @@ Click for more information...</value>
     <value>NoControl</value>
   </data>
   <data name="LblLaserMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 7</value>
+    <value>4, 7</value>
+  </data>
+  <data name="LblLaserMode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="LblLaserMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
+    <value>83, 17</value>
   </data>
   <data name="LblLaserMode.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -1370,23 +1449,26 @@ Click for more information...</value>
   <data name="BtnOnOffInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIMSURBVDhPpc9PSNNhHMfxZ7/pQYIOHioMojBnyMLN
-        FUSOiNEfWyASls0Fk2jVdEwTCzwU5aXoUHaxoEOHDh2m/bECFZZ/1qFyQ1JYI+kPg3JQW3qwjS6fns8z
-        /fHLgxE98IIvz/O8nx8/AeC/CHP1kDS8xmwbaZX6pchf8E6ramS79MBQm8M7PRO6tZC7cOcn/rSI87cL
-        uvoW0XZjPmf3vJ1hU3hg+3MaCN6cz/muzMGooTOprNz3X/uWY8NWmK2DNBrq/YGm7k86d3Ba/mJhcTae
-        +a+mwYatMFc9otGz19Oo70jo9p2OLeVQs/HsxKXPYMNWaJVhGmvpSeFgYErnOvUGlrqHKN/fj0r3Y2w9
-        MKBwdvomwIat0Coe0Lj34gf1pb0nX8PeGIHl0CBisRji8Tgq6p7A4n6mqzkaARu2Qiu/T+NN3e9R63sF
-        65ExVDW8wLb6YRUnEgk1c2+Z/VgUbNgKbfM9mjjcnoTNM4nq4wXWxqiKU6mUmpf3qcYbAxu2Qtt0l6Ku
-        4EfsbEnqbJ64ijOZjJqNZ8SGrdA29tFLVyiN3We+6Hb43qk4m82q2XhGbNgKbX0vPXUG5vJ72hdgZG+e
-        Ulbu7/J/zbNhK0xFW4Rp7eWOMkd41hn4nnd1/cJqauWdDTXhWTZsuUqFqdQhipp7RPG5EVHcObk6eYd3
-        2bCVq0RaJ5X9I9mIkt+LaQarb80ZCAAAAABJRU5ErkJggg==
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAISSURBVDhPpdBPSNNhHMfxZ7/pQYIOHioMojBnyML9
+        KYgcEaM/tkAkLJsLJtGquTFNLPBQlJeiQ9nFgg4dOnSY9scKVFj+WYfK/ZAU1kj6w6Ac1JYebKPLp+fz
+        W/746cGIHnixL8/zvJ8fTAAQ/0OYa4ek4TVm20ib1C/F/oJ32rRGtn8eGAo5fdMzkVsL+Qt3fmK5RZy/
+        XdTVt4jQjfm83ft2Rsah4gPbn9NA+OZ83n9lDkaNnSnQyv3AtW95NmyF2TpIo5HeH2ju/qTzhKflX1Nc
+        nI1ngasZsGErzDWPaPTs9QwaOpK6facT+gOcjWcnLn0GG7ZCqY7SWGtPGgeDUzr3qTew1D9E5f5+VHse
+        Y+uBAQ1nl38CbNgKpeoBjfsufgC/tPfka9ibYrAcGkQikYCqqqiqfwKL55nOcTQGNmyFUnmfxpu736PO
+        /wrWI2OoaXyBbQ3DWpxMJrWZe0vsx+Jgw1Yom+/RxOH2FGzeSdQeL7I2xbU4nU5r89I+fx2+BNiwFcqm
+        uxR3hz9iZ2tKZ/OqWpzNZuXD6rIz3mPDVigb++ilO5LB7jNfdDv877Q4l8uBs/GMMxu2QlnfS09dwbnC
+        nvYFGNlbpkAr93cFvhbYsBWmki3CtPZyR4UzOusKfi+4u35hNXXyzgZHdJYNW65yYSp3ipKWHlF6bkSU
+        dk6uTt7hXTZs5SqT1kkV/4hN2W+LaQarp0EL0gAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="BtnOnOffInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>257, 5</value>
+    <value>340, 5</value>
+  </data>
+  <data name="BtnOnOffInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="BtnOnOffInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 17</value>
+    <value>23, 21</value>
   </data>
   <data name="BtnOnOffInfo.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -1402,7 +1484,7 @@ Click for more information...</value>
     <value>BtnOnOffInfo</value>
   </data>
   <data name="&gt;&gt;BtnOnOffInfo.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.ImageButton, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnOnOffInfo.Parent" xml:space="preserve">
     <value>tableLayoutPanel7</value>
@@ -1414,10 +1496,13 @@ Click for more information...</value>
     <value>Fill</value>
   </data>
   <data name="CBLaserON.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 3</value>
+    <value>95, 4</value>
+  </data>
+  <data name="CBLaserON.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="CBLaserON.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 21</value>
+    <value>237, 24</value>
   </data>
   <data name="CBLaserON.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -1444,10 +1529,13 @@ Click for more information...</value>
     <value>NoControl</value>
   </data>
   <data name="LblSmax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 51</value>
+    <value>4, 61</value>
+  </data>
+  <data name="LblSmax.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="LblSmax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
+    <value>51, 17</value>
   </data>
   <data name="LblSmax.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1471,10 +1559,13 @@ Click for more information...</value>
     <value>Left</value>
   </data>
   <data name="IIMaxPower.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 51</value>
+    <value>95, 61</value>
+  </data>
+  <data name="IIMaxPower.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="IIMaxPower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 15</value>
+    <value>57, 17</value>
   </data>
   <data name="IIMaxPower.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1483,7 +1574,7 @@ Click for more information...</value>
     <value>IIMaxPower</value>
   </data>
   <data name="&gt;&gt;IIMaxPower.Type" xml:space="preserve">
-    <value>LaserGRBL.UserControls.NumericInput.IntegerInputRanged, LaserGRBL, Version=6.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>LaserGRBL.UserControls.NumericInput.IntegerInputRanged, LaserGRBL, Version=6.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;IIMaxPower.Parent" xml:space="preserve">
     <value>tableLayoutPanel7</value>
@@ -1501,10 +1592,13 @@ Click for more information...</value>
     <value>NoControl</value>
   </data>
   <data name="LblMinPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 31</value>
+    <value>160, 36</value>
+  </data>
+  <data name="LblMinPerc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="LblMinPerc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 13</value>
+    <value>28, 17</value>
   </data>
   <data name="LblMinPerc.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1534,10 +1628,13 @@ Click for more information...</value>
     <value>NoControl</value>
   </data>
   <data name="LblMaxPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 51</value>
+    <value>160, 61</value>
+  </data>
+  <data name="LblMaxPerc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="LblMaxPerc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 13</value>
+    <value>44, 17</value>
   </data>
   <data name="LblMaxPerc.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -1557,17 +1654,17 @@ Click for more information...</value>
   <data name="&gt;&gt;LblMaxPerc.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="tableLayoutPanel7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="tableLayoutPanel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
+    <value>4, 22</value>
+  </data>
+  <data name="tableLayoutPanel7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tableLayoutPanel7.RowCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="tableLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 68</value>
+    <value>367, 82</value>
   </data>
   <data name="tableLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1585,16 +1682,19 @@ Click for more information...</value>
     <value>0</value>
   </data>
   <data name="tableLayoutPanel7.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="BtnModulationInfo" Row="1" RowSpan="2" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="LblSmin" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="IIMinPower" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LblLaserMode" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BtnOnOffInfo" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="CBLaserON" Row="0" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="LblSmax" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="IIMaxPower" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LblMinPerc" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="LblMaxPerc" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,Percent,50,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="GbLaser.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="BtnModulationInfo" Row="1" RowSpan="2" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="LblSmin" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="IIMinPower" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LblLaserMode" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BtnOnOffInfo" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="CBLaserON" Row="0" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="LblSmax" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="IIMaxPower" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LblMinPerc" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="LblMaxPerc" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,Percent,50,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="GbLaser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 70</value>
+    <value>4, 95</value>
+  </data>
+  <data name="GbLaser.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GbLaser.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 0</value>
   </data>
   <data name="GbLaser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 87</value>
+    <value>392, 123</value>
   </data>
   <data name="GbLaser.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1614,6 +1714,9 @@ Click for more information...</value>
   <data name="&gt;&gt;GbLaser.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
   <data name="tableLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1627,10 +1730,13 @@ Click for more information...</value>
     <value>NoControl</value>
   </data>
   <data name="BtnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 3</value>
+    <value>182, 4</value>
+  </data>
+  <data name="BtnCancel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="BtnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 27</value>
+    <value>99, 33</value>
   </data>
   <data name="BtnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1654,10 +1760,13 @@ Click for more information...</value>
     <value>NoControl</value>
   </data>
   <data name="BtnCreate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 3</value>
+    <value>289, 4</value>
+  </data>
+  <data name="BtnCreate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="BtnCreate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 27</value>
+    <value>99, 33</value>
   </data>
   <data name="BtnCreate.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1677,17 +1786,17 @@ Click for more information...</value>
   <data name="&gt;&gt;BtnCreate.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 259</value>
+    <value>4, 369</value>
+  </data>
+  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 38</value>
+    <value>392, 41</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1707,17 +1816,17 @@ Click for more information...</value>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="BtnCancel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="BtnCreate" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="tableLayoutPanel9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="tableLayoutPanel9.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="tableLayoutPanel9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
   </data>
   <data name="tableLayoutPanel9.RowCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="tableLayoutPanel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 300</value>
+    <value>400, 414</value>
   </data>
   <data name="tableLayoutPanel9.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1741,7 +1850,7 @@ Click for more information...</value>
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1750,10 +1859,10 @@ Click for more information...</value>
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>289, 300</value>
+    <value>405, 422</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>5, 5, 5, 5</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

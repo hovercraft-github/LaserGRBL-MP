@@ -22,8 +22,23 @@ namespace LaserGRBL.RasterConverter
 	{
 		public static Bitmap ResizeImage(Image image, Size size, bool killalfa, InterpolationMode interpolation)
 		{
-			if (image.Size == size)
-				return new Bitmap((Image)image.Clone());
+			if (ImageTransform.CalcFillPercent((Bitmap)image) < 1.0f)
+				Logger.LogMessage("ImageTransform", "WARNING: ResizeImage thr{0} input image is empty: size={1}, fill={2:N}%",
+					System.Threading.Thread.CurrentThread.ManagedThreadId,
+					image.Size, ImageTransform.CalcFillPercent((Bitmap)image));
+			if (image.Size == size) {
+				Bitmap ret = null;
+				try {
+					//ret = new Bitmap((Image)image.Clone());
+					ret = (Bitmap)CloneImage(image);
+				} catch (Exception ex) {
+				Logger.LogException("RasterImport", ex); }
+				//DrowMarkLine((Bitmap)ret, Color.Red, false);
+				Logger.LogMessage("ImageTransform", "ResizeImage thr{0} ret.size={1}, fill={2:N}%",
+					System.Threading.Thread.CurrentThread.ManagedThreadId,
+					ret.Size, ImageTransform.CalcFillPercent((Bitmap)ret));
+				return ret;
+			}
 
 			Rectangle destRect = new Rectangle(0, 0, size.Width, size.Height);
 			Bitmap destImage = new Bitmap(size.Width, size.Height);
@@ -32,13 +47,16 @@ namespace LaserGRBL.RasterConverter
 			float vr = image.VerticalResolution;
 			if ((Math.Abs(hr) < 1.0f) || (Math.Abs(vr) < 1.0f))
 			{
-				using (Graphics graphics = Graphics.FromHwnd(IntPtr.Zero))
-				{
-					hr = graphics.DpiX;
-					vr = graphics.DpiY;
-				}
+				hr = destImage.HorizontalResolution;
+				vr = destImage.VerticalResolution;
+				if ((Math.Abs(hr) < 1.0f) || (Math.Abs(vr) < 1.0f))
+					using (Graphics graphics = Graphics.FromHwnd(IntPtr.Zero))
+					{
+						hr = graphics.DpiX;
+						vr = graphics.DpiY;
+					}
 			}
-			Logger.LogMessage("SetResolution", "hr={0}, vr={1}", new[] {hr, vr});
+			Logger.LogMessage("ResizeImage", "hr={0}, vr={1}", hr, vr);
 			destImage.SetResolution(hr, vr);
 
 			using (Graphics g = Graphics.FromImage(destImage))
@@ -66,6 +84,10 @@ namespace LaserGRBL.RasterConverter
 				}
 			}
 
+			Logger.LogMessage("ImageTransform", "ResizeImage thr{0} destImage.size={1}, fill={2:N}%",
+				System.Threading.Thread.CurrentThread.ManagedThreadId,
+				destImage.Size, ImageTransform.CalcFillPercent((Bitmap)destImage));
+			//DrowMarkLine((Bitmap)destImage, Color.Red, false);
 			return destImage;
 		}
 
@@ -111,8 +133,12 @@ namespace LaserGRBL.RasterConverter
 				}
 				return tmp;
 			}
-			catch
-			{
+			catch (Exception ex) {
+				Logger.LogException("ImageTransform.draw_adjusted_image", ex);
+				System.Windows.Forms.MessageBox.Show(ex.Message,
+					"ImageTransform.draw_adjusted_image failure",
+					System.Windows.Forms.MessageBoxButtons.OK,
+					System.Windows.Forms.MessageBoxIcon.Error);
 				return null;
 			}
 
@@ -594,8 +620,65 @@ namespace LaserGRBL.RasterConverter
 			}
 		}
 
+		public static bool TestGrayScale(Bitmap bmp)
+		{
+			int maxdiff = 0;
 
+			for (int x = 0; x < bmp.Width; x += 10) {
+				for (int y = 0; y < bmp.Height; y += 10) {
+					Color c = bmp.GetPixel(x, y);
+					maxdiff = Math.Max(maxdiff, Math.Abs(c.R - c.G));
+					maxdiff = Math.Max(maxdiff, Math.Abs(c.G - c.B));
+					maxdiff = Math.Max(maxdiff, Math.Abs(c.R - c.B));
+				}
+			}
+
+			return (maxdiff < 20);
+		}
+
+		public static float CalcFillPercent(Bitmap bmp)
+		{
+			if (bmp == null) return 0.0f;
+			int cntNonWhite = 0;
+			int cntAll = 0;
+			Color white = Color.Transparent;
+			for (int x = 0; x < bmp.Width; x += 10) {
+				for (int y = 0; y < bmp.Height; y += 10) {
+					Color c = bmp.GetPixel(x, y);
+					cntNonWhite += ((c.R - white.R != 0 ? 1 : 0)
+						+ (c.G - white.G != 0 ? 1 : 0)
+						+ (c.B - white.B != 0 ? 1 : 0)
+						) == 0 || (c.R+ c.G + c.B + c.A == 0) ? 0 : 1;
+					cntAll++;
+				}
+			}
+			if (cntAll == 0) return 0.0f;
+			return (float)cntNonWhite / (float)cntAll * 100.0f;
+		}
+
+		public static void DrowMarkLine(Bitmap bmp, Color color, bool descent = true)
+		{
+			return;
+			using (Graphics g = Graphics.FromImage(bmp)) {
+				g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+				using (Pen p = new Pen(color, 1F)) {
+					if (descent)
+						g.DrawLine(p, 0, 0, bmp.Width, bmp.Height);
+					else
+						g.DrawLine(p, 0, bmp.Height, bmp.Width, 0);
+				}
+			}
+		}
+
+		public static Image CloneImage(Image img)
+		{
+			Image newimage = new Bitmap(img.Width + 6, img.Height + 6);
+			using (Graphics g = Graphics.FromImage(newimage)) {
+				g.Clear(Color.Transparent);
+				g.DrawImage(img, 0, 0);
+			}
+			return newimage;
+		}
 
 	}
-
 }

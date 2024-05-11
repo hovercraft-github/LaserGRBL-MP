@@ -55,23 +55,27 @@
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 3;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.22222F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(643, 441);
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(857, 543);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// TbExMessage
 			// 
+			this.TbExMessage.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.tableLayoutPanel1.SetColumnSpan(this.TbExMessage, 2);
 			this.TbExMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.TbExMessage.Location = new System.Drawing.Point(3, 109);
+			this.TbExMessage.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.TbExMessage.Location = new System.Drawing.Point(4, 135);
+			this.TbExMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.TbExMessage.Name = "TbExMessage";
 			this.TbExMessage.ReadOnly = true;
-			this.TbExMessage.Size = new System.Drawing.Size(637, 275);
+			this.TbExMessage.Size = new System.Drawing.Size(849, 336);
 			this.TbExMessage.TabIndex = 5;
 			this.TbExMessage.Text = "";
 			// 
@@ -79,7 +83,8 @@
 			// 
 			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+			this.pictureBox1.Location = new System.Drawing.Point(4, 15);
+			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(114, 100);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -94,23 +99,26 @@
 			this.tableLayoutPanel2.Controls.Add(this.LblFormDescription, 0, 1);
 			this.tableLayoutPanel2.Controls.Add(this.LblOOPS, 0, 0);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(123, 3);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(126, 4);
+			this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
 			this.tableLayoutPanel2.RowCount = 2;
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel2.Size = new System.Drawing.Size(517, 100);
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(727, 123);
 			this.tableLayoutPanel2.TabIndex = 3;
 			// 
 			// LblFormDescription
 			// 
+			this.LblFormDescription.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.LblFormDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.LblFormDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.LblFormDescription.Location = new System.Drawing.Point(3, 35);
+			this.LblFormDescription.Location = new System.Drawing.Point(4, 43);
+			this.LblFormDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.LblFormDescription.Name = "LblFormDescription";
 			this.LblFormDescription.ReadOnly = true;
-			this.LblFormDescription.Size = new System.Drawing.Size(511, 62);
+			this.LblFormDescription.Size = new System.Drawing.Size(719, 76);
 			this.LblFormDescription.TabIndex = 3;
 			this.LblFormDescription.Text = resources.GetString("LblFormDescription.Text");
 			this.LblFormDescription.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.LblFormDescription_LinkClicked);
@@ -120,10 +128,10 @@
 			this.LblOOPS.AutoSize = true;
 			this.LblOOPS.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.LblOOPS.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-			this.LblOOPS.Location = new System.Drawing.Point(5, 5);
-			this.LblOOPS.Margin = new System.Windows.Forms.Padding(5);
+			this.LblOOPS.Location = new System.Drawing.Point(7, 6);
+			this.LblOOPS.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
 			this.LblOOPS.Name = "LblOOPS";
-			this.LblOOPS.Size = new System.Drawing.Size(270, 22);
+			this.LblOOPS.Size = new System.Drawing.Size(345, 27);
 			this.LblOOPS.TabIndex = 0;
 			this.LblOOPS.Text = "Ooops! Something went wrong";
 			// 
@@ -138,20 +146,22 @@
 			this.tableLayoutPanel3.Controls.Add(this.BtnContinue, 2, 0);
 			this.tableLayoutPanel3.Controls.Add(this.BtnAbort, 1, 0);
 			this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 390);
+			this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 479);
+			this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
 			this.tableLayoutPanel3.RowCount = 1;
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.tableLayoutPanel3.Size = new System.Drawing.Size(637, 48);
+			this.tableLayoutPanel3.Size = new System.Drawing.Size(849, 60);
 			this.tableLayoutPanel3.TabIndex = 4;
 			// 
 			// BtnContinue
 			// 
 			this.BtnContinue.Image = ((System.Drawing.Image)(resources.GetObject("BtnContinue.Image")));
 			this.BtnContinue.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.BtnContinue.Location = new System.Drawing.Point(527, 3);
+			this.BtnContinue.Location = new System.Drawing.Point(702, 4);
+			this.BtnContinue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.BtnContinue.Name = "BtnContinue";
-			this.BtnContinue.Size = new System.Drawing.Size(107, 42);
+			this.BtnContinue.Size = new System.Drawing.Size(143, 52);
 			this.BtnContinue.TabIndex = 16;
 			this.BtnContinue.Text = " Continue";
 			this.BtnContinue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -162,9 +172,10 @@
 			// 
 			this.BtnAbort.Image = ((System.Drawing.Image)(resources.GetObject("BtnAbort.Image")));
 			this.BtnAbort.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.BtnAbort.Location = new System.Drawing.Point(414, 3);
+			this.BtnAbort.Location = new System.Drawing.Point(551, 4);
+			this.BtnAbort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.BtnAbort.Name = "BtnAbort";
-			this.BtnAbort.Size = new System.Drawing.Size(107, 42);
+			this.BtnAbort.Size = new System.Drawing.Size(143, 52);
 			this.BtnAbort.TabIndex = 14;
 			this.BtnAbort.Text = "Abort";
 			this.BtnAbort.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -173,11 +184,14 @@
 			// 
 			// ExceptionManager
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(643, 441);
+			this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.ClientSize = new System.Drawing.Size(857, 543);
 			this.Controls.Add(this.tableLayoutPanel1);
+			this.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Name = "ExceptionManager";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Exception Manager";
@@ -188,7 +202,6 @@
 			this.tableLayoutPanel2.PerformLayout();
 			this.tableLayoutPanel3.ResumeLayout(false);
 			this.ResumeLayout(false);
-
 		}
 
 		#endregion

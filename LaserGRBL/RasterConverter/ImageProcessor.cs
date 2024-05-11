@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Threading;
+using System.Runtime.CompilerServices;
 
 namespace LaserGRBL.RasterConverter
 {
@@ -26,14 +27,14 @@ namespace LaserGRBL.RasterConverter
 		public static event GenerationCompleteDlg GenerationComplete;
 
 		private Bitmap mTrueOriginal;	//real original image
-		private Bitmap mOriginal;		//original image (cropped or rotated)
+		private Bitmap mOriginal;	//original image (cropped or rotated)
 		private Bitmap mResized;		//resized for preview
-        private int mFileDPI;
-        private Size mFileResolution;
+		private int mFileDPI;
+		private Size mFileResolution;
 
 		private bool mGrayScale;		//image has no color
 		private bool mSuspended;		//image generator suspended for multiple property change
-		private Size mBoxSize;			//size of the picturebox frame
+		private Size mBoxSize;		//size of the picturebox frame
 
 		//options for image processing
 		private InterpolationMode mInterpolation = InterpolationMode.HighQualityBicubic;
@@ -84,7 +85,7 @@ namespace LaserGRBL.RasterConverter
 		GrblCore mCore;
 
 		private ImageProcessor Current; 		//current instance of processor thread/class - used to call abort
-		Thread TH;								//processing thread
+		Thread TH;						//processing thread
 		protected ManualResetEvent MustExit;	//exit condition
 
 
@@ -133,7 +134,7 @@ namespace LaserGRBL.RasterConverter
 
 			mBoxSize = boxSize;
 			ResizeRecalc();
-			mGrayScale = TestGrayScale(mOriginal);
+			mGrayScale = ImageTransform.TestGrayScale(mOriginal);
 		}
 
 		internal void FormResize(Size size)
@@ -145,35 +146,28 @@ namespace LaserGRBL.RasterConverter
 
 		public object Clone()
 		{
-			ImageProcessor rv = this.MemberwiseClone() as ImageProcessor;
-			rv.TH = null;
-			rv.MustExit = null;
-			rv.mTrueOriginal = mTrueOriginal;
-			rv.mOriginal = mOriginal;
-			rv.mResized = mResized.Clone() as Bitmap;
-			return rv;
+			lock (this) {
+				ImageProcessor rv = this.MemberwiseClone() as ImageProcessor;
+				rv.TH = null;
+				rv.MustExit = null;
+				rv.mTrueOriginal = (Bitmap)ImageTransform.CloneImage(mTrueOriginal);
+				if (mOriginal != null) {
+					rv.mOriginal = (Bitmap)ImageTransform.CloneImage(mOriginal);
+				} else {
+					Logger.LogMessage("ImageProcessor.Clone", "WARNING: Called with mOriginal=null");
+				}
+				if (mResized != null) {
+					rv.mResized = (Bitmap)ImageTransform.CloneImage(mResized);
+				} else {
+					Logger.LogMessage("ImageProcessor.Clone", "WARNING: Called with mResized=null");
+					rv.mResized = null;
+				}
+				return rv;
+			}
 		}
 
 		public bool IsGrayScale
 		{ get { return mGrayScale; } }
-
-		bool TestGrayScale(Bitmap bmp)
-		{
-			int maxdiff = 0;
-
-			for (int x = 0; x < bmp.Width; x += 10)
-			{
-				for (int y = 0; y < bmp.Height; y += 10)
-				{
-					Color c = bmp.GetPixel(x, y);
-					maxdiff = Math.Max(maxdiff, Math.Abs(c.R - c.G));
-					maxdiff = Math.Max(maxdiff, Math.Abs(c.G - c.B));
-					maxdiff = Math.Max(maxdiff, Math.Abs(c.R - c.B));
-				}
-			}
-
-			return (maxdiff < 20);
-		}
 
 		public void Dispose()
 		{
@@ -181,9 +175,14 @@ namespace LaserGRBL.RasterConverter
 			if (Current != null)
 				Current.AbortThread();
 
-			mTrueOriginal.Dispose();
-			mOriginal.Dispose();
-			mResized.Dispose();
+			lock (this) {
+				if (mTrueOriginal != null) mTrueOriginal.Dispose();
+				mTrueOriginal = null;
+				if (mOriginal != null) mOriginal.Dispose();
+				mOriginal = null;
+				if (mResized != null) mResized.Dispose();
+				mResized = null;
+			}
 		}
 
 		public void Suspend()
@@ -239,11 +238,13 @@ namespace LaserGRBL.RasterConverter
 				if (scaled.Width <= 0 || scaled.Height <= 0)
 					return;
 
-				Bitmap newBmp = mOriginal.Clone(scaled, mOriginal.PixelFormat);
-				Bitmap oldBmp = mOriginal;
+				lock (this) {
+					Bitmap newBmp = mOriginal.Clone(scaled, mOriginal.PixelFormat);
+					Bitmap oldBmp = mOriginal;
 
-				mOriginal = newBmp;
-				oldBmp.Dispose();
+					mOriginal = newBmp;
+					oldBmp.Dispose();
+				}
 
 				ResizeRecalc();
 				Refresh();
@@ -343,11 +344,13 @@ namespace LaserGRBL.RasterConverter
 			if (scaled.Width <= 0 || scaled.Height <= 0)
 				return;
 
-			Bitmap newBmp = mOriginal.Clone(scaled, mOriginal.PixelFormat);
-			Bitmap oldBmp = mOriginal;
+			lock (this) {
+				Bitmap newBmp = mOriginal.Clone(scaled, mOriginal.PixelFormat);
+				Bitmap oldBmp = mOriginal;
 
-			mOriginal = newBmp;
-			oldBmp.Dispose();
+				mOriginal = newBmp;
+				oldBmp.Dispose();
+			}
 
 			ResizeRecalc();
 			Refresh();
@@ -376,35 +379,41 @@ namespace LaserGRBL.RasterConverter
 			Refresh();
 		}
 
-
-
-
 		public void RotateCW()
 		{
-			mOriginal.RotateFlip(RotateFlipType.Rotate90FlipNone);
+			lock (this) {
+				mOriginal.RotateFlip(RotateFlipType.Rotate90FlipNone);
+			}
 			ResizeRecalc();
 			Refresh();
 		}
 
 		public void RotateCCW()
 		{
-			mOriginal.RotateFlip(RotateFlipType.Rotate270FlipNone);
+			lock (this) {
+				mOriginal.RotateFlip(RotateFlipType.Rotate270FlipNone);
+			}
 			ResizeRecalc();
 			Refresh();
 		}
 
 		public void FlipH()
 		{
-			mOriginal.RotateFlip(RotateFlipType.RotateNoneFlipY);
+			lock (this) {
+				mOriginal.RotateFlip(RotateFlipType.Rotate90FlipY);
+				mOriginal.RotateFlip(RotateFlipType.Rotate270FlipNone);
+			}
 			ResizeRecalc();
 			Refresh();
 		}
 
 		public void Revert()
 		{
-			Bitmap tmp = mOriginal;
-			mOriginal = mTrueOriginal.Clone() as Bitmap;
-			tmp.Dispose();
+			lock (this) {
+				Bitmap tmp = mOriginal;
+				mOriginal = (Bitmap)ImageTransform.CloneImage(mTrueOriginal); //mTrueOriginal.Clone() as Bitmap;
+				tmp.Dispose();
+			}
 
 			ResizeRecalc();
 			Refresh();
@@ -412,7 +421,11 @@ namespace LaserGRBL.RasterConverter
 
 		public void FlipV()
 		{
-			mOriginal.RotateFlip(RotateFlipType.RotateNoneFlipX);
+			lock (this) {
+				//mOriginal.RotateFlip(RotateFlipType.RotateNoneFlipX);
+				mOriginal.RotateFlip(RotateFlipType.Rotate90FlipX);
+				mOriginal.RotateFlip(RotateFlipType.Rotate270FlipNone);
+			}
 			ResizeRecalc();
 			Refresh();
 		}
@@ -875,7 +888,17 @@ namespace LaserGRBL.RasterConverter
 
 			TH = null;
 			MustExit = null;
-			mResized.Dispose();
+
+			lock (this) {
+				if (mResized != null) {
+					Logger.LogMessage("ImageProcessor", "AbortThread {0}: dropping mResized.size={1}, fill={2:N}%",
+						RuntimeHelpers.GetHashCode(this),
+						mResized.Size, ImageTransform.CalcFillPercent(mResized));
+					mResized.Dispose();
+				}
+				mResized = null;
+			}
+
 		}
 
 		private bool MustExitTH
@@ -905,8 +928,8 @@ namespace LaserGRBL.RasterConverter
 								PreviewDithering(bmp);
 							else if (SelectedTool == Tool.Vectorize)
 								PreviewVector(bmp);
-                            else if (SelectedTool == Tool.Centerline)
-                                PreviewCenterline(bmp);
+							else if (SelectedTool == Tool.Centerline)
+								PreviewCenterline(bmp);
 							else if (SelectedTool == Tool.NoProcessing)
 								PreviewLineByLine(bmp);
 						}
@@ -918,11 +941,15 @@ namespace LaserGRBL.RasterConverter
 			}
 			catch (Exception ex)
 			{
+				Logger.LogMessage("CreatePreview", "Error: {0}", ex.Message);
 				System.Diagnostics.Debug.WriteLine(ex.ToString());
 			}
 			finally
 			{
-				mResized.Dispose();
+				lock (this) {
+					if (mResized != null) mResized.Dispose();
+					mResized = null;
+				}
 			}
 		}
 
@@ -1168,12 +1195,13 @@ namespace LaserGRBL.RasterConverter
 			Direction dir = Direction.None;
 			if (SelectedTool == ImageProcessor.Tool.Line2Line && LinePreview)
 				dir = LineDirection;
-			if (SelectedTool == ImageProcessor.Tool.Dithering && LinePreview)
+			else if (SelectedTool == ImageProcessor.Tool.Dithering && LinePreview)
 				dir = LineDirection;
 			else if (SelectedTool == ImageProcessor.Tool.Vectorize && FillingDirection != Direction.None)
 				dir = FillingDirection;
-			if (SelectedTool == ImageProcessor.Tool.NoProcessing)
+			else if (SelectedTool == ImageProcessor.Tool.NoProcessing)
 				dir = Direction.Horizontal;
+
 
 			if (!MustExitTH && dir != Direction.None)
 			{
@@ -1362,8 +1390,8 @@ namespace LaserGRBL.RasterConverter
 
 
 		public Bitmap Original { get { return mResized; } }
-        public Bitmap TrueOriginal { get { return mOriginal; } } //originale eventualmente croppata e ruotata
-        public int FileDPI { get { return mFileDPI; } }
+		public Bitmap TrueOriginal { get { return mOriginal; } } //originale eventualmente croppata e ruotata
+		public int FileDPI { get { return mFileDPI; } }
 
 		
 		//public Size FileResolution { get { return mFileResolution; } }
