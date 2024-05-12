@@ -16,6 +16,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using LaserGRBL.SvgConverter;
+using static LaserGRBL.RasterConverter.ImageTransform;
 
 namespace LaserGRBL
 {
@@ -306,7 +307,7 @@ namespace LaserGRBL
 
 			RiseOnFileLoading(filename);
 
-			bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
+			RotateFlip(bmp, RotateFlipType.RotateNoneFlipY);
 			long start = Tools.HiResTimer.TotalMilliseconds;
 
 			if (!append)
@@ -464,7 +465,7 @@ namespace LaserGRBL
 
 			RiseOnFileLoading(filename);
 
-			bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
+			RotateFlip(bmp, RotateFlipType.RotateNoneFlipY);
 
 			long start = Tools.HiResTimer.TotalMilliseconds;
 

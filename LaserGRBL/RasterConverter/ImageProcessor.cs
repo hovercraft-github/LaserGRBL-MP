@@ -86,8 +86,7 @@ namespace LaserGRBL.RasterConverter
 
 		private ImageProcessor Current; 		//current instance of processor thread/class - used to call abort
 		Thread TH;						//processing thread
-		protected ManualResetEvent MustExit;	//exit condition
-
+		protected ManualResetEvent MustExit;    //exit condition
 
 		public enum Tool
 		{ 
@@ -172,10 +171,13 @@ namespace LaserGRBL.RasterConverter
 		public void Dispose()
 		{
 			Suspend();
-			if (Current != null)
-				Current.AbortThread();
 
 			lock (this) {
+				AbortThread();
+				if (Current != null) {
+					Current.Dispose();
+					Current = null;
+				}
 				if (mTrueOriginal != null) mTrueOriginal.Dispose();
 				mTrueOriginal = null;
 				if (mOriginal != null) mOriginal.Dispose();
@@ -400,8 +402,7 @@ namespace LaserGRBL.RasterConverter
 		public void FlipH()
 		{
 			lock (this) {
-				mOriginal.RotateFlip(RotateFlipType.Rotate90FlipY);
-				mOriginal.RotateFlip(RotateFlipType.Rotate270FlipNone);
+				ImageTransform.RotateFlip(mOriginal, RotateFlipType.RotateNoneFlipY);
 			}
 			ResizeRecalc();
 			Refresh();
@@ -422,9 +423,7 @@ namespace LaserGRBL.RasterConverter
 		public void FlipV()
 		{
 			lock (this) {
-				//mOriginal.RotateFlip(RotateFlipType.RotateNoneFlipX);
-				mOriginal.RotateFlip(RotateFlipType.Rotate90FlipX);
-				mOriginal.RotateFlip(RotateFlipType.Rotate270FlipNone);
+				ImageTransform.RotateFlip(mOriginal, RotateFlipType.RotateNoneFlipX);
 			}
 			ResizeRecalc();
 			Refresh();
@@ -847,7 +846,7 @@ namespace LaserGRBL.RasterConverter
 				return;
 
 			if (Current != null)
-				Current.AbortThread();
+				Current.Dispose();
 
 			Current = (ImageProcessor)this.Clone();
 			Current.RunThread();
@@ -888,17 +887,6 @@ namespace LaserGRBL.RasterConverter
 
 			TH = null;
 			MustExit = null;
-
-			lock (this) {
-				if (mResized != null) {
-					Logger.LogMessage("ImageProcessor", "AbortThread {0}: dropping mResized.size={1}, fill={2:N}%",
-						RuntimeHelpers.GetHashCode(this),
-						mResized.Size, ImageTransform.CalcFillPercent(mResized));
-					mResized.Dispose();
-				}
-				mResized = null;
-			}
-
 		}
 
 		private bool MustExitTH
@@ -941,7 +929,7 @@ namespace LaserGRBL.RasterConverter
 			}
 			catch (Exception ex)
 			{
-				Logger.LogMessage("CreatePreview", "Error: {0}", ex.Message);
+				Logger.LogMessage("ImageProcessor.CreatePreview", "Error: {0}", ex.Message);
 				System.Diagnostics.Debug.WriteLine(ex.ToString());
 			}
 			finally
@@ -1023,7 +1011,7 @@ namespace LaserGRBL.RasterConverter
 				return;
 
 			if (Current != null)
-				Current.AbortThread();
+				Current.Dispose();
 
 			Current = (ImageProcessor)this.Clone();
 			Current.GenerateGCode2();
@@ -1114,6 +1102,7 @@ namespace LaserGRBL.RasterConverter
 			}
 			catch (Exception ex)
 			{
+				Logger.LogException("ImageProcessor.GenerateGCode", ex);
 				if (GenerationComplete != null)
 					GenerationComplete(ex);
 			}

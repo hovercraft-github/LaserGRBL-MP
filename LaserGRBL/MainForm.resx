@@ -2107,7 +2107,7 @@
     <value>24, 20</value>
   </data>
   <data name="questionMarkToolStripMenuItem.Text" xml:space="preserve">
-    <value>?</value>
+    <value>??</value>
   </data>
   <data name="MMn.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>

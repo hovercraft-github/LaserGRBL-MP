@@ -23,7 +23,7 @@ namespace LaserGRBL.RasterConverter
 		public static Bitmap ResizeImage(Image image, Size size, bool killalfa, InterpolationMode interpolation)
 		{
 			if (ImageTransform.CalcFillPercent((Bitmap)image) < 1.0f)
-				Logger.LogMessage("ImageTransform", "WARNING: ResizeImage thr{0} input image is empty: size={1}, fill={2:N}%",
+				Logger.LogMessage("ImageTransform.ResizeImage", "WARNING: thr{0} input image is empty: size={1}, fill={2:N}%",
 					System.Threading.Thread.CurrentThread.ManagedThreadId,
 					image.Size, ImageTransform.CalcFillPercent((Bitmap)image));
 			if (image.Size == size) {
@@ -32,11 +32,7 @@ namespace LaserGRBL.RasterConverter
 					//ret = new Bitmap((Image)image.Clone());
 					ret = (Bitmap)CloneImage(image);
 				} catch (Exception ex) {
-				Logger.LogException("RasterImport", ex); }
-				//DrowMarkLine((Bitmap)ret, Color.Red, false);
-				Logger.LogMessage("ImageTransform", "ResizeImage thr{0} ret.size={1}, fill={2:N}%",
-					System.Threading.Thread.CurrentThread.ManagedThreadId,
-					ret.Size, ImageTransform.CalcFillPercent((Bitmap)ret));
+				Logger.LogException("ImageTransform.ResizeImage", ex); }
 				return ret;
 			}
 
@@ -56,7 +52,6 @@ namespace LaserGRBL.RasterConverter
 						vr = graphics.DpiY;
 					}
 			}
-			Logger.LogMessage("ResizeImage", "hr={0}, vr={1}", hr, vr);
 			destImage.SetResolution(hr, vr);
 
 			using (Graphics g = Graphics.FromImage(destImage))
@@ -84,10 +79,6 @@ namespace LaserGRBL.RasterConverter
 				}
 			}
 
-			Logger.LogMessage("ImageTransform", "ResizeImage thr{0} destImage.size={1}, fill={2:N}%",
-				System.Threading.Thread.CurrentThread.ManagedThreadId,
-				destImage.Size, ImageTransform.CalcFillPercent((Bitmap)destImage));
-			//DrowMarkLine((Bitmap)destImage, Color.Red, false);
 			return destImage;
 		}
 
@@ -658,7 +649,6 @@ namespace LaserGRBL.RasterConverter
 
 		public static void DrowMarkLine(Bitmap bmp, Color color, bool descent = true)
 		{
-			return;
 			using (Graphics g = Graphics.FromImage(bmp)) {
 				g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
 				using (Pen p = new Pen(color, 1F)) {
@@ -680,5 +670,20 @@ namespace LaserGRBL.RasterConverter
 			return newimage;
 		}
 
+		private static readonly bool runningOnMono = Type.GetType("Mono.Runtime") != null;
+		public static void RotateFlip(Image img, RotateFlipType rotateFlipType)
+		{
+			if (rotateFlipType == RotateFlipType.RotateNoneFlipX) {
+				// A workaround for buggy libgdiplus in mono
+				img.RotateFlip(RotateFlipType.Rotate90FlipY);
+				img.RotateFlip(RotateFlipType.Rotate270FlipNone);
+			} else if (rotateFlipType == RotateFlipType.RotateNoneFlipY) {
+				// A workaround for buggy libgdiplus in mono
+				img.RotateFlip(RotateFlipType.Rotate90FlipX);
+				img.RotateFlip(RotateFlipType.Rotate270FlipNone);
+			} else {
+				img.RotateFlip(rotateFlipType);
+			}
+		}
 	}
 }

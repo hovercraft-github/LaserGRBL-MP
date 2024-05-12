@@ -10,6 +10,7 @@ using CsPotrace.BezierToBiarc;
 using System.Collections;
 using CsPotrace;
 using System.Drawing;
+using static LaserGRBL.RasterConverter.ImageTransform;
 
 namespace CsPotrace
 {
@@ -47,7 +48,7 @@ namespace CsPotrace
 
 			if (debug)
 			{
-				bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
+				RotateFlip(bmp, RotateFlipType.RotateNoneFlipY);
 				bmp.Save("preview.png");
 				g.Dispose();
 				bmp.Dispose();
