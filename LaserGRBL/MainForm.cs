@@ -112,9 +112,12 @@ namespace LaserGRBL
 
 		private void RefreshColorSchema()
 		{
+			//this.splitContainer1.Parent.BackColor = ColorScheme.FormBackColor;
+			//this.splitContainer1.Panel1.BackColor = ColorScheme.FormBackColor;
+			//this.splitContainer1.Panel2.BackColor = ColorScheme.FormBackColor;
+			//MMn.Parent.BackColor = ColorScheme.FormBackColor;
 			MMn.BackColor = BackColor = StatusBar.BackColor = ColorScheme.FormBackColor;
-			MMn.ForeColor =
-			ForeColor = ColorScheme.FormForeColor;
+			MMn.ForeColor = ForeColor = ColorScheme.FormForeColor;
 			/*foreach (ToolStripMenuItem item in this.MMn.Items)
 			{
 				item.BackColor = ColorScheme.FormBackColor;
@@ -1154,15 +1157,48 @@ namespace LaserGRBL
 	}
 	public class CustomMenuColor : ProfessionalColorTable
 	{
-		/*
-		public override Color SeparatorDark
-		{ get { return ColorScheme.MenuSeparatorColor; } }
-		public override Color SeparatorLight
-		{ get { return ColorScheme.MenuSeparatorColor; } }
-		*/
-		//public override Color MenuStripGradientBegin => Color.DimGray;  //ColorScheme.FormBackColor;
-		//public override Color MenuStripGradientEnd => Color.DimGray;  //ColorScheme.FormBackColor;
-		//public override Color MenuItemSelected => Color.DimGray;  //ColorScheme.MenuHighlightColor;
+		// Background of the toolbar itself
+		public override Color MenuStripGradientBegin => ColorScheme.FormBackColor;
+		public override Color MenuStripGradientEnd => ColorScheme.FormBackColor;
+
+		// Linux (Mono): background under menu item icons.
+		// Windows: has no effect.
+		public override Color ToolStripGradientBegin => ColorScheme.FormBackColor;
+		public override Color ToolStripGradientMiddle => ColorScheme.FormBackColor;
+		public override Color ToolStripGradientEnd => ColorScheme.FormBackColor;
+
+		// Linux (Mono): has no effect.
+		// Windows: background under menu item icons.
+		public override Color ImageMarginGradientBegin => ColorScheme.FormBackColor;  //Color.DimGray;
+		public override Color ImageMarginGradientMiddle => ColorScheme.FormBackColor;  //Color.DimGray;
+		public override Color ImageMarginGradientEnd => ColorScheme.FormBackColor;  //Color.DimGray;
+
+		// Mouse hover color in the toolbar root items
+		public override Color ButtonSelectedGradientBegin => ColorScheme.MenuHighlightColor;
+		public override Color ButtonSelectedGradientMiddle => ColorScheme.MenuHighlightColor;
+		public override Color ButtonSelectedGradientEnd => ColorScheme.MenuHighlightColor;
+
+		// Linux (Mono): color of mouse-hovered item in the drop-down menus.
+		// Windows: has no effect except a short time blinking when hovering.
+		public override Color MenuItemSelectedGradientBegin => Color.Silver;  //ColorScheme.MenuHighlightColor; //Color.Silver;
+		public override Color MenuItemSelectedGradientEnd => Color.DimGray; //ColorScheme.MenuHighlightColor; //Color.DimGray;
+
+		// Linux (Mono): has no effect.
+		// Windows: color of mouse-hovered item in the drop-down menus.
+		public override Color MenuItemSelected => ColorScheme.MenuHighlightColor;
+
+		//The following has no effect:
+		//public override Color ButtonSelectedHighlight => Color.Red;
+		//public override Color ToolStripPanelGradientBegin => Color.Red;
+		//public override Color ToolStripPanelGradientEnd => Color.Red;
+		//public override Color ToolStripContentPanelGradientBegin => Color.Red;
+		//public override Color ToolStripContentPanelGradientEnd => Color.Red;
+		//public override Color OverflowButtonGradientBegin => Color.Red;
+		//public override Color OverflowButtonGradientMiddle => Color.Red;
+		//public override Color OverflowButtonGradientEnd => Color.Red;
+		//public override Color GripDark => Color.Red;
+		//public override Color GripLight => Color.Red;
+
 		/// <summary>
 		/// Gets the starting color of the gradient used when
 		/// a top-level System.Windows.Forms.ToolStripMenuItem is pressed.
@@ -1182,40 +1218,10 @@ namespace LaserGRBL
 		public override Color MenuItemBorder => Color.DarkGray;
 
 		/// <summary>
-		/// Gets the starting color of the gradient used when the
-		/// System.Windows.Forms.ToolStripMenuItem is selected.
-		/// </summary>
-		public override Color MenuItemSelectedGradientBegin => Color.Silver;  //ColorScheme.MenuHighlightColor; //Color.Silver;
-
-		/// <summary>
-		/// Gets the end color of the gradient used when the
-		/// System.Windows.Forms.ToolStripMenuItem is selected.
-		/// </summary>
-		public override Color MenuItemSelectedGradientEnd => Color.DimGray; //ColorScheme.MenuHighlightColor; //Color.DimGray;
-
-		/// <summary>
 		/// Gets the solid background color of the
 		/// System.Windows.Forms.ToolStripDropDown.
 		/// </summary>
 		public override Color ToolStripDropDownBackground => ColorScheme.FormBackColor;  //Color.DimGray;
-
-		/// <summary>
-		/// Gets the starting color of the gradient used in the image
-		/// margin of a System.Windows.Forms.ToolStripDropDownMenu.
-		/// </summary>
-		public override Color ImageMarginGradientBegin => Color.DimGray;
-
-		/// <summary>
-		/// Gets the middle color of the gradient used in the image
-		/// margin of a System.Windows.Forms.ToolStripDropDownMenu.
-		/// </summary>
-		public override Color ImageMarginGradientMiddle => Color.DimGray;
-
-		/// <summary>
-		/// Gets the end color of the gradient used in the image
-		/// margin of a System.Windows.Forms.ToolStripDropDownMenu.
-		/// </summary>
-		public override Color ImageMarginGradientEnd => Color.DimGray;
 
 		/// <summary>
 		/// Gets the color to use to for shadow effects on
