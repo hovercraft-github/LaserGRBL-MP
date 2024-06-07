@@ -452,6 +452,8 @@ namespace LaserGRBL.RasterConverter
 
 			public void SetPixel(int x, int y, Color colour)
 			{
+				if ((x >= Width) || (y >= Height) || (x < 0) || (y < 0))
+					return;
 				int index = x + (y * Width);
 				int col = colour.ToArgb();
 
@@ -460,6 +462,8 @@ namespace LaserGRBL.RasterConverter
 
 			public Color GetPixel(int x, int y)
 			{
+				if ((x >= Width) || (y >= Height) || (x < 0) || (y < 0))
+					return Color.Red;
 				int index = x + (y * Width);
 				int col = Bits[index];
 				Color result = Color.FromArgb(col);
@@ -572,8 +576,8 @@ namespace LaserGRBL.RasterConverter
 		{
 			int v = 127;
 			Color cx = bmp.GetPixel(pt.X, pt.Y);
-            bool[][] tchd = Fill4(bmp, pt, Color.White, v);
-            Color c0 = cx;
+			bool[][] tchd = Fill4(bmp, pt, Color.White, v);
+			Color c0 = cx;
 			for (int y = 0; y < bmp.Height; y++)
 			{
 				for (int x = 0; x < bmp.Width; x++)

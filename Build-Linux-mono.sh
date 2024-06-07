@@ -27,11 +27,12 @@ fi
 
 if [ ! -f /opt/libgdiplus/lib/libgdiplus.so.0.0.0 ]; then
     echo "Building proper libgdiplus.so"
-    sudo apt-get install -y libgif-dev autoconf libtool automake build-essential gettext libglib2.0-dev libcairo2-dev libtiff-dev libexif-dev libpng-dev libjpeg-dev
     git clone --recurse-submodules -j https://github.com/mono/libgdiplus.git
     cd libgdiplus/external/googletest
     patch -p1 < ../../../libgdiplus.patch
     cd ../../
+    sudo apt-get install -y libgif-dev autoconf libtool automake build-essential gettext libglib2.0-dev libcairo2-dev libtiff-dev libexif-dev libpng-dev libjpeg-dev
+    # Optionally for --with-pango build: sudo apt install libpango1.0-dev libcairo2-dev
     ./autogen.sh --prefix=/opt/libgdiplus
     # Configuration summary
     # 

@@ -660,17 +660,13 @@ namespace LaserGRBL.RasterConverter
 				Cropping = false;
 				Cursor.Clip = new Rectangle();
 				UpdateButtons();
-			}
-			if (Filling>=0)
-            {
+			} else if (Filling>=0) {
 				int left = (PbConverted.Width - PbConverted.Image.Width) / 2;
 				int top = (PbConverted.Height - PbConverted.Image.Height) / 2;
                 Point location = new Point(e.X - left, e.Y - top);
                 Color color = e.Button == MouseButtons.Left ? Color.Black : Color.White;
                 IP.Fill(location, PbConverted.Image.Size, color, Filling);
-            }
-			if (Outlining)
-            {
+            } else if (Outlining) {
 				int left = (PbConverted.Width - PbConverted.Image.Width) / 2;
 				int top = (PbConverted.Height - PbConverted.Image.Height) / 2;
 				Point location = new Point(e.X - left, e.Y - top);
@@ -681,11 +677,8 @@ namespace LaserGRBL.RasterConverter
 		bool Cropping;
 		void BtnCropClick(object sender, EventArgs e)
 		{
-			if (Filling >= 0 || Outlining)
-			{
-				Filling = -1;
-				Outlining = false;
-			}
+			Filling = -1;
+			Outlining = false;
 			Cropping = !Cropping;
 			UpdateButtons();
 		}
@@ -700,11 +693,8 @@ namespace LaserGRBL.RasterConverter
 		int Filling = -1;
 		void BtnFillClick(object sender, EventArgs e)
 		{
-			if (Cropping || Outlining)
-			{
-				Cropping = false;
-				Outlining = false;
-			}
+			Cropping = false;
+			Outlining = false;
 			if (Filling >= 0) Filling = -1;
 			else Filling = 127;
 			UpdateButtons();
@@ -713,11 +703,8 @@ namespace LaserGRBL.RasterConverter
 		bool Outlining;
 		private void BtnOutliner_Click(object sender, EventArgs e)
 		{
-			if (Filling >= 0 || Cropping)
-			{
-				Filling = -1;
-				Cropping = false;
-			}
+			Filling = -1;
+			Cropping = false;
 			Outlining = !Outlining;
 			UpdateButtons();
 		}
