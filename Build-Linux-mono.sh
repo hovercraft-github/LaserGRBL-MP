@@ -27,7 +27,7 @@ fi
 
 if [ ! -f /opt/libgdiplus/lib/libgdiplus.so.0.0.0 ]; then
     echo "Building proper libgdiplus.so"
-    git clone --recurse-submodules -j https://github.com/mono/libgdiplus.git
+    git clone --recurse-submodules -j6 https://github.com/mono/libgdiplus.git
     cd libgdiplus/external/googletest
     patch -p1 < ../../../libgdiplus.patch
     cd ../../
@@ -61,4 +61,5 @@ fi
 
 msbuild -t:Rebuild -p:Configuration=Release .
 
+## Add libjpeg.so.8 libtiff.so.5
 bash -c "cd LaserGRBL/bin/Release && mkbundle -o LaserGRBL --simple LaserGRBL.exe --machine-config /etc/mono/4.5/machine.config --config ../../../mkbundle.config --library libgdiplus.so.0,/opt/libgdiplus/lib/libgdiplus.so.0.0.0 --library libMonoPosixHelper.so,/usr/lib/libMonoPosixHelper.so --library libmono-native.so,/usr/lib/libmono-native.so.0.0.0"
