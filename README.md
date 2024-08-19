@@ -1,3 +1,66 @@
+# LaserGRBL mono CLR port
+
+This is a port of excelent [LaserGRBL](https://github.com/arkypita/LaserGRBL) project  
+to __mono__ runtime which lets it work on some small computers like Raspberry Pi under control of the Linux OS  
+as native application.
+
+Please note that this is still an experimental effort,  
+so some features may be missed or work unstable.
+
+## Requirements
+
+This application prooved to work on x86_64 and aarch64 architectures  
+under Ubuntu 22.04, Ubuntu 24.04 and Debian GNU/Linux 12 (bookworm) operating systems  
+with at least 4Gb RAM.  
+It also *may* work on Raspbian-bookworm OS, however untested.
+
+`Tested environments:`
+
+|name|architecture    |OS|
+|--------------|------------------------------|--------------------|
+|Raspberry Pi 4  |  aarch64 | Debian GNU/Linux 12 (bookworm) |
+|Orange Pi 5  |  aarch64 | Ubuntu 24.04 LTS |
+|Generic PC |  x86_64 | Ubuntu 22.04 LTS |
+
+## Installation
+
+Note: the following `apt` command uses DEV packages that contains the stuff you may not need.
+Consult your OS manuals for clean installation of mentioned packages.
+
+In your preferred terminal/shell program:
+
+```bash
+sudo apt install -y libglib2.0-dev libcairo2-dev libtiff-dev libexif-dev libpng-dev libjpeg-dev
+```
+
+Unpack the binary release archive suited for your platform to folder of your choice,  
+go to the unpacked folder and run:
+
+```bash
+chmod ug+rx ./LaserGRBL
+./LaserGRBL
+```
+
+## Remote access
+
+The common scenario is to run this application remotely on the RPi,  
+while seeing its screen on the user's PC.  
+Options are:
+ 
+ - use VNC
+ - with Linux & X11 PC the preffered way is using XDMCP via ssh
+ 
+ For XDMCP connect to the remote device via ssh as follows:
+
+ ```bash
+ssh -Y user@remote-RPi-address
+```
+, then just run LaserGRBL in this session and you should see the application GUI.
+
+## Development
+
+To get a clue how to build this port take a look into the [Build-Linux-mono.sh](Build-Linux-mono.sh) script.
+
 # LaserGRBL [![Donation](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?business=4WQX8HUBXRVUU&no_recurring=0&item_name=LaserGRBL&currency_code=EUR)
 Official website [http://lasergrbl.com](http://lasergrbl.com)
 
