@@ -25,7 +25,7 @@ else
     echo "Found mono v$MONO_VERSION"
 fi
 
-if [ ! -f /opt/libgdiplus/lib/libgdiplus.so.0.0.0 ]; then
+if [ ! -f /usr/local/lib/libgdiplus.so.0.0.0 ]; then
     echo "Building proper libgdiplus.so"
     git clone --recurse-submodules -j6 https://github.com/mono/libgdiplus.git
     cd libgdiplus/external/googletest
@@ -33,10 +33,10 @@ if [ ! -f /opt/libgdiplus/lib/libgdiplus.so.0.0.0 ]; then
     cd ../../
     sudo apt-get install -y libgif-dev autoconf libtool automake build-essential gettext libglib2.0-dev libcairo2-dev libtiff-dev libexif-dev libpng-dev libjpeg-dev
     # Optionally for --with-pango build: sudo apt install libpango1.0-dev libcairo2-dev
-    ./autogen.sh --prefix=/opt/libgdiplus
+    ./autogen.sh --prefix=/usr/local
     # Configuration summary
     # 
-    #    * Installation prefix = /opt/libgdiplus
+    #    * Installation prefix = /usr/local
     #    * Cairo = 1.16.0 (system)
     #    * Text = pango
     #    * EXIF tags = No. Get it from http://libexif.sourceforge.net/
@@ -55,11 +55,11 @@ if [ ! -f /opt/libgdiplus/lib/libgdiplus.so.0.0.0 ]; then
     sudo make install
     cd ../
 else
-    echo "Found /opt/libgdiplus/lib/libgdiplus.so.0.0.0"
+    echo "Found /usr/local/lib/libgdiplus.so.0.0.0"
     printf "In the case of some probles with image handling in the LaserGRBL,\n you should remove existing libgdiplus.so and we will rebuild it\n\n"
 fi
 
 msbuild -t:Rebuild -p:Configuration=Release .
 
 ## Add libjpeg.so.8 libtiff.so.5
-bash -c "cd LaserGRBL/bin/Release && mkbundle -o LaserGRBL --simple LaserGRBL.exe --machine-config /etc/mono/4.5/machine.config --config ../../../mkbundle.config --library libgdiplus.so.0,/opt/libgdiplus/lib/libgdiplus.so.0.0.0 --library libMonoPosixHelper.so,/usr/lib/libMonoPosixHelper.so --library libmono-native.so,/usr/lib/libmono-native.so.0.0.0"
+bash -c "cd LaserGRBL/bin/Release && mkbundle -o LaserGRBL --simple LaserGRBL.exe --machine-config /etc/mono/4.5/machine.config --config ../../../mkbundle.config --library libgdiplus.so.0,/usr/local/lib/libgdiplus.so.0.0.0 --library libMonoPosixHelper.so,/usr/lib/libMonoPosixHelper.so --library libmono-native.so,/usr/lib/libmono-native.so.0.0.0"
